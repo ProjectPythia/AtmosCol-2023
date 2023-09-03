@@ -21,89 +21,59 @@ Comité científico y organizador de AtmosCol
 </a>
 
 ## Estructura
+El taller estará compuesto por dos sesiones. En la sesión de la mañana trabajeremos con Python y acceso a los datos hidrometeorológicos de diversas fuentes. En la sesión de la tarde trabajaremos anális de series de tiempo usando R.
 
-### Foundational Tools
+### Sección 1. Acceso a los datos hidrometeorológicos usando Python
 
-There are some foundational tools, such as xradar, wradlib, LROSE, and Py-ART!
+|        Hora         |                                                          Contenido                                                           |                                   Tutor                                   |  Duración  |
+|:-------------------:|:----------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------:|:----------:|
+| 08:00 AM - 08:15 AM |            Apertura del curso. Arranque del Jupyter Lab, instalación de librerias y requerimientos para el taller            | Alfonso Ladino, Nicole Rivera, Nestor Bernal, Iván Arias, Maria F. Moreno | 15 minutos |
+| 08:15 AM - 09:00 AM |                                    Introducción a Numpy, Pandas, Xarray, Py-Art y Xradar                                     |                              Alfonso Ladino                               | 45 minutos |
+| 09:00 AM - 09:30 AM |            Acceso a los datos de estaciones IDEAM usando el portal de [datos abiertos](https://www.datos.gov.co/)            |                              Alfonso Ladino                               | 30 minutos |
+| 09:30 AM - 10:00 AM | Acceso a los datos de [radares meteorológicos](https://registry.opendata.aws/ideam-radares/) de IDEAM usando Xradar y Py-Art |                              Alfonso Ladino                               | 30 minutos |
+| 10:00 AM - 10:30 AM |                                                   Pausa para el refrigerio                                                   |                                                                           | 30 minutos |
+| 10:30 AM - 11:00 AM |                                   Acceso a los datos de NASA (OPENDAP) y los datos de CMIP                                   |                       Alfonso Ladino, Nicole Rivera                       | 30 minutos |
+| 11:00 AM - 11:30 PM |                                     Cálculo de la anomalia ENSO en el Pacífico Tropical                                      |                               Nicole Rivera                               | 30 minutos |
+| 11:30 AM - 12:00 PM |                                     Gráficas del IPCC - Escenarios de Cambion Climático                                      |                               Nicole Rivera                               | 30 minutos |
+| 12:00 PM - 01:30 PM |                                                           Almuerzo                                                           |                                                                           | 1.5 horas  |
 
-|        Hora         |                                               Contenido                                                |                                   Tutor                                   |     Duración      |
-|:-------------------:|:------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------:|:-----------------:|
-| 08:00 AM - 08:15 AM | Apertura del curso. Arranque del Jupyter Lab, instalación de librerias y requerimientos para el taller | Alfonso Ladino, Nicole Rivera, Nestor Bernal, Iván Arias, Maria F. Moreno |    15 minutos     |
-| 08:15 AM - 09:00 AM |                         Introducción a Numpy, Pandas, Xarray, Py-Art y Xradar                          |                              Alfonso Ladino                               |    45 minutes     |
-| 08:45 AM - 09:30 AM | Acceso a los datos de estaciones IDEAM usando el portal de [datos abiertos](https://www.datos.gov.co/) |                              Alfonso Ladino                               |    45 minutes     |
-| 09:30 AM - 10:00 AM |                                          Hands on with Pyrad                                           |             Jordi Figueras i Ventura and Daniel Wolfensberger             |    30 minutes     |
-| 10:00 AM - 10:30 AM |                                              Coffee Break                                              |                                                                           |    30 minutes     |
-| 10:30 AM - 11:15 AM |                                         Hands on with wradlib                                          |                               Julian Giles                                |    45 minutes     |
-| 11:15 AM - 12:00 PM |                                     Hands on with LROSE wind tools                                     |                         Jen DeHart + Ting-Yu Cha                          |    45 minutes     |
-| 12:00 PM - 01:15 PM |                                                 LUNCH                                                  |                                                                           | 1 hour 15 minutes |
-
-### Analysis-Specific Tools
-
-There are some analysis-specific tools, such as PyDDA, MetPy, and TOBAC!
-
-|       Time          |    Content                                        | Speaker/Chair | Duration   |
-|    :---:            |    :----:                                         |    :---:      | :----:     |
-| 01:15 PM - 02:00 PM | Multi-Doppler Analysis with PyDDA                 | Bobby Jackson | 45 minutes |
-| 02:00 PM - 02:45 PM | Tracking Cells with TOBAC                         | Sean Freeman + Kelcy Brunner | 45 minutes |
-| 02:45 PM - 03:30 PM | Visualizing other Observations and Models with Radar using MetPy | Ryan May and Drew Camron | 45 minutes |
-| 03:30 PM - 04:00 PM | Hands on with BALTRAD                             | Daniel Michelson   | 30 minutes |
+### Sección 2. Anális de series de tiempo usando R
 
 
-## Running the Notebooks
+|        Hora         |                     Contenido                      |     Tutor     |  Duración  |
+|:-------------------:|:--------------------------------------------------:|:-------------:|:----------:|
+| 01:30 PM - 02:00 PM |       Análisis y calidad de series de tiempo       | Nestor Bernal | 30 minutos |
+| 02:00 PM - 02:30 PM |            Rellenado de datos faltantes            | Nestor Bernal | 30 minutos |
+| 02:30 PM - 03:00 PM | Homogenización de series de tiempo y modelos ARIMA | Nestor Bernal | 30 minutos |
 
-You can either run the notebook using [Binder](https://mybinder.org/) or on your local machine.
 
-### Section 1 ( Replace with the title of this section, e.g. "Foundations" )
+## Ejecutar los Notebooks
 
-(Add content for this section, e.g., "The foundational content includes ... ")
+Pueden ejecutar los `notebooks` bien sea usando [Binder](https://mybinder.org/) o localmente en sus maquinas.
 
-### Section 2 ( Replace with the title of this section, e.g. "Example workflows" )
+### Binder
 
-(Add content for this section, e.g., "Example workflows include ... ")
+La forma más sencilla de interactuar con un `Jupyter Notebook` es a través de [Binder](https://binder.projectpythia.org/), que permite la ejecución de un [Jupyter Book](https://jupyterbook.org) en la nube. Los detalles de cómo funciona `binder` no son muy relevantes por ahora. Todo lo que necesitamos saber es cómo iniciar un capítulo de Pythia Cookbooks a través de Binder. Simplemente navegue con el mouse hasta la esquina superior derecha del capítulo del libro que está viendo y haga clic en el ícono del cohete y asegúrese de seleccionar "iniciar Binder". Después de un momento, se te presentará un `Jupyter Lab` con el que podrás interactuar. Es decir. Podrás ejecutar e incluso cambiar los programas de ejemplo. Verás que las celdas de código no tienen salida al principio, hasta que las ejecutes presionando `Shift`+`Enter`. Los detalles completos sobre cómo interactuar con un cuaderno Jupyter activo se describen en [Introducción a Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
 
-## Running the Notebooks
+### Ejecutar de manera local
+Si está interesado en ejecutar este material localmente en su computadora, deberá seguir este flujo de trabajo:
 
-You can either run the notebook using [Binder](https://binder.projectpythia.org/) or on your local machine.
-
-### Running on Binder
-
-The simplest way to interact with a Jupyter Notebook is through
-[Binder](https://binder.projectpythia.org/), which enables the execution of a
-[Jupyter Book](https://jupyterbook.org) in the cloud. The details of how this works are not
-important for now. All you need to know is how to launch a Pythia
-Cookbooks chapter via Binder. Simply navigate your mouse to
-the top right corner of the book chapter you are viewing and click
-on the rocket ship icon, (see figure below), and be sure to select
-“launch Binder”. After a moment you should be presented with a
-notebook that you can interact with. I.e. you’ll be able to execute
-and even change the example programs. You’ll see that the code cells
-have no output at first, until you execute them by pressing
-{kbd}`Shift`\+{kbd}`Enter`. Complete details on how to interact with
-a live Jupyter notebook are described in [Getting Started with
-Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
-
-### Running on Your Own Machine
-
-If you are interested in running this material locally on your computer, you will need to follow this workflow:
-
-(Replace "cookbook-example" with the title of your cookbooks)
-
-1. Clone the `https://github.com/ProjectPythia/cookbook-example` repository:
+1. Clone el repositorio  `https://github.com/aladinor/Atmoscol2023.git` usando el siguiente comando de consola:
 
    ```bash
-    git clone https://github.com/ProjectPythia/cookbook-example.git
+    git clone https://github.com/aladinor/Atmoscol2023.git
    ```
 
-1. Move into the `cookbook-example` directory
+1. Entre en la carpeta de `Atmoscol2023`
    ```bash
-   cd cookbook-example
+   cd Atmoscol2023
    ```
-1. Create and activate your conda environment from the `environment.yml` file
+1. Cree y active su ambiente de desarrollo usando el archivo `environment.yml`
    ```bash
    conda env create -f environment.yml
-   conda activate cookbook-example
+   conda activate Atmoscol2023
    ```
-1. Move into the `notebooks` directory and start up Jupyterlab
+1. Vaya a la carpeta `notebooks` y comience una sesión de `Jupyterlab`
    ```bash
    cd notebooks/
    jupyter lab
