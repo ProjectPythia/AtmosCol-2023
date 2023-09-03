@@ -12,7 +12,7 @@ authors:
     orcid: https://orcid.org/0000-0002-0370-8974 # optional
     website: https://github.com/mgrover1
     affiliation: Argonne National Laboratory # optional
-  - name: "AtmosCol " # use the 'name' field to acknowledge organizations
-    website: "https://github.com/ProjectPythia/radar-cookbook/graphs/contributors"
-title: "Radar Cookbook"
-abstract: "A cookbook meant to work with various weather radar data."
+  - name: "AtmosCol 2023" # use the 'name' field to acknowledge organizations
+    website: "https://www.uniquindio.edu.co/atmoscol2023/"
+title: "AtmosCol 2023"
+abstract: "Introducción al acceso de datos hidrometeorológicos usando Python"

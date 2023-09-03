@@ -1,4 +1,4 @@
-name: cookbook-dev
+name: Atmoscol2023
 channels:
   - conda-forge
 dependencies:
