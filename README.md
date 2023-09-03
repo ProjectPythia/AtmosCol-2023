@@ -1,25 +1,23 @@
-<img src="thumbnail.png" alt="thumbnail" width="300"/>
+<img src="atmoscol.jpg" alt="thumbnail" width="800"/>
 
-# (Replace_with_your_title) Cookbook
+# Taller de datos científicos con Python AtmosCol 2023
 
 [![nightly-build](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/475509405.svg)](https://zenodo.org/badge/latestdoi/475509405)
 
-This Project Pythia Cookbook covers ... (replace `...` with the main subject of your cookbook ... e.g., _working with radar data in Python_)
+## Motivación
 
-## Motivation
+Introducción a la programación científica con Python y acceso a datos hidrometeorológicos de diversas fuentes.
 
-(Add a few sentences stating why this cookbook will be useful. What skills will you, "the chef", gain once you have reached the end of the cookbook?)
+## Autores
 
-## Authors
+Comité científico y organizador de AtmosCol
 
-[First Author](@first-author), [Second Author](@second-author), etc. _Acknowledge primary content authors here_
+### Colaboradores
 
-### Contributors
-
-<a href="https://github.com/ProjectPythia/cookbook-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ProjectPythia/cookbook-template" />
+<a href="https://github.com/aladinor/Atmoscol2023/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Atmoscol2023/Atmoscol2023" />
 </a>
 
 ## Structure
