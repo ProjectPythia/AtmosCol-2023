@@ -12,12 +12,12 @@ Introducción a la programación científica con Python y acceso a datos hidrome
 
 ## Autores
 
-Comité científico y organizador de AtmosCol
+Comité científico y organizador de AtmosCol 2023
 
 ### Colaboradores
 
 <a href="https://github.com/aladinor/Atmoscol2023/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Atmoscol2023/Atmoscol2023" />
+  <img src="https://contrib.rocks/image?repo=aladinor/Atmoscol2023" />
 </a>
 
 ## Estructura
