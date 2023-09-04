@@ -2,9 +2,25 @@ name: Atmoscol2023
 channels:
   - conda-forge
 dependencies:
+  - python=3.10
   - jupyter-book
   - jupyterlab
   - jupyter_server
+  - xarray
+  - xarray-datatree
+  - zarr
+  - gcsfs
+  - numpy
+  - pandas
+  - netcdf
+  - dask
+  - arm_pyart
+  - matplotlib
+  - cartopy
+  - xmip
+  - cf_xarray
+  - hvplot
+  - scipy
   - pip
   - pip:
       - sphinx-pythia-theme
