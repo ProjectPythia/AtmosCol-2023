@@ -35,7 +35,7 @@ El taller estará compuesto por dos sesiones. En la sesión de la mañana trabaj
 | 10:00 AM - 10:30 AM |                                                   Pausa para el refrigerio                                                   |                                                                           | 30 minutos |
 | 10:30 AM - 11:00 AM |                                   Acceso a los datos de NASA (OPENDAP) y los datos de CMIP                                   |                       Alfonso Ladino, Nicole Rivera                       | 30 minutos |
 | 11:00 AM - 11:30 PM |                                     Cálculo de la anomalia ENSO en el Pacífico Tropical                                      |                               Nicole Rivera                               | 30 minutos |
-| 11:30 AM - 12:00 PM |                                     Gráficas del IPCC - Escenarios de Cambion Climático                                      |                               Nicole Rivera                               | 30 minutos |
+| 11:30 AM - 12:00 PM |                                      Gráficas del IPCC - Escenarios de Cambio Climático                                      |                               Nicole Rivera                               | 30 minutos |
 | 12:00 PM - 01:30 PM |                                                           Almuerzo                                                           |                                                                           | 1.5 horas  |
 
 ### Sección 2. Anális de series de tiempo usando R
