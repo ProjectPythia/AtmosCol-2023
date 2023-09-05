@@ -8,6 +8,7 @@ dependencies:
   - jupyter_server
   - xarray
   - xarray-datatree
+  - xarrayutils
   - zarr
   - gcsfs
   - numpy
@@ -21,6 +22,7 @@ dependencies:
   - cf_xarray
   - hvplot
   - scipy
+  - intake-esm
   - pip
   - pip:
       - sphinx-pythia-theme
