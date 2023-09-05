@@ -1,9 +1,19 @@
 format: jb-book
 root: README
 parts:
-  - caption: Preamble
+  - caption: Preambulo
     chapters:
       - file: notebooks/how-to-cite
-  - caption: Introduction
+  - caption: Introducción a Python
     chapters:
-      - file: notebooks/notebook-template
+      - file: notebooks/fundamentos/notebook-template
+  - caption: Acceso a datos hidrometeorológicos
+    chapters:
+      - file: notebooks/accesso-datos/notebook-template
+  - caption: ENSO
+    chapters:
+      - file: notebooks/ENSO/notebook-template
+  - caption: Cambio Climático
+    chapters:
+      - file: notebooks/cambio-climatico/notebook-template
+
