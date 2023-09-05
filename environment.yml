@@ -1,4 +1,4 @@
-name: Atmoscol2023
+name: atmoscol2023
 channels:
   - conda-forge
 dependencies:

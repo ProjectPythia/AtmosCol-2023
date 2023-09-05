@@ -72,7 +72,7 @@ Si está interesado en ejecutar este material localmente en su computadora, debe
 1. Cree y active su ambiente de desarrollo usando el archivo `environment.yml`
    ```bash
    conda env create -f environment.yml
-   conda activate Atmoscol2023
+   conda activate atmoscol2023
    ```
 1. Vaya a la carpeta `notebooks` y comience una sesión de `Jupyterlab`
    ```bash
