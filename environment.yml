@@ -12,7 +12,7 @@ dependencies:
   - gcsfs
   - numpy
   - pandas
-  - netcdf
+  - netcdf4
   - dask
   - arm_pyart
   - matplotlib
