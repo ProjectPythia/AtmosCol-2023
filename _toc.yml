@@ -12,8 +12,8 @@ parts:
       - file: notebooks/accesso-datos/notebook-template
   - caption: ENSO
     chapters:
-      - file: notebooks/ENSO/notebook-template
+      - file: notebooks/ENSO/ENSO
   - caption: Cambio Climático
     chapters:
-      - file: notebooks/cambio-climatico/notebook-template
+      - file: notebooks/cambio-climatico/Global-Mean-SST
 
