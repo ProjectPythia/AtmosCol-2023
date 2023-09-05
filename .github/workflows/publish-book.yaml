@@ -11,7 +11,8 @@ jobs:
   build:
     uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
     with:
-      environment_name: cookbook-dev
+      environment_name: atmoscol2023
+      environment_file: environment.yml
 
   deploy:
     needs: build
