@@ -9,7 +9,7 @@ parts:
       - file: notebooks/fundamentos/notebook-template
   - caption: Acceso a datos hidrometeorológicos
     chapters:
-      - file: notebooks/accesso-datos/notebook-template
+      - file: notebooks/acceso-datos/notebook-template
   - caption: ENSO
     chapters:
       - file: notebooks/ENSO/ENSO
