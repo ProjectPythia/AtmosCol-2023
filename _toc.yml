@@ -6,14 +6,14 @@ parts:
       - file: notebooks/how-to-cite
   - caption: Introducción a Python
     chapters:
-      - file: notebooks/fundamentos/notebook-template
+      - file: notebooks/1.fundamentos/fundamentos-python
   - caption: Acceso a datos hidrometeorológicos
     chapters:
-      - file: notebooks/acceso-datos/notebook-template
+      - file: notebooks/2.acceso-datos/notebook-template
   - caption: ENSO
     chapters:
-      - file: notebooks/ENSO/ENSO
+      - file: notebooks/3.ENSO/ENSO
   - caption: Cambio Climático
     chapters:
-      - file: notebooks/cambio-climatico/Global-Mean-SST
+      - file: notebooks/4.cambio-climatico/Global-Mean-SST
 
