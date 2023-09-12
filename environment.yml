@@ -23,6 +23,7 @@ dependencies:
   - hvplot
   - scipy
   - intake-esm
+  - xmovie
   - pip
   - pip:
       - sphinx-pythia-theme
