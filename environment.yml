@@ -6,7 +6,6 @@ dependencies:
   - python>=3.9
   - jupyter-book
   - jupyterlab
-  - pydata-sphinx-theme
   - jupyter_server
   - h5netcdf
   - h5py
@@ -31,4 +30,5 @@ dependencies:
   - pip
   - pip:
       - sphinx-pythia-theme
+      - pydata-sphinx-theme
       - xmip
