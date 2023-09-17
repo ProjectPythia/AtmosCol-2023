@@ -28,7 +28,10 @@ dependencies:
   - ffmpeg
   - xradar
   - pip
+  - xlrd
+  - folium
   - pip:
       - sphinx-pythia-theme
       - pydata-sphinx-theme
       - xmip
+      - sodapy
