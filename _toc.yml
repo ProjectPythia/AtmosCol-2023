@@ -1,7 +1,7 @@
 format: jb-book
 root: README
 parts:
-  - caption: Preambulo
+  - caption: Preámbulo
     chapters:
       - file: notebooks/how-to-cite
   - caption: Introducción a Python
