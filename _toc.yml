@@ -9,8 +9,9 @@ parts:
       - file: notebooks/1.fundamentos/fundamentos-python
   - caption: Acceso a datos hidrometeorológicos
     chapters:
-      - file: notebooks/2.acceso-datos/notebook-template
-  - caption: ENSO
+      - file: notebooks/2.acceso-datos/Estaciones
+      - file: notebooks/2.acceso-datos/Radares
+  - caption: ENOS
     chapters:
       - file: notebooks/3.ENSO/ENSO
   - caption: Cambio Climático
