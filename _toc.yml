@@ -11,6 +11,7 @@ parts:
     chapters:
       - file: notebooks/2.acceso-datos/Estaciones
       - file: notebooks/2.acceso-datos/Radares
+      - file: notebooks/2.acceso-datos/Satellite
   - caption: ENOS
     chapters:
       - file: notebooks/3.ENSO/ENSO
