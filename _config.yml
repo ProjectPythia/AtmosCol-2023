@@ -41,7 +41,7 @@ sphinx:
       use_repository_button: true
       use_edit_page_button: true
       google_analytics_id: G-T52X8HNYE8
-      github_url: https://github.com/ProjectPythia
+      github_url: https://github.com/aladinor/Atmoscol2023.git
       twitter_url: https://twitter.com/project_pythia
       icon_links:
         - name: YouTube
