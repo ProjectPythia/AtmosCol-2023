@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Acceso a información hidrometeorológica en Colombia - Estaciones &#8212; Taller de datos científicos con Python AtmosCol 2023</title>
+    <title>Radares Meteorológicos &#8212; Taller de datos científicos con Python AtmosCol 2023</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Resúmen" href="../3.ENSO/ENSO.html" />
-    <link rel="prev" title="Acceso a información hidrometeorológica en Colombia - Estaciones" href="Estaciones.html" />
+    <link rel="next" title="El Niño - Oscilación del Sur (ENOS)" href="../3.ENSO/ENSO.html" />
+    <link rel="prev" title="Estaciones hidrometeorológicas" href="Estaciones.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -218,12 +218,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Estaciones.html">
-   Acceso a información hidrometeorológica en Colombia - Estaciones
+   Estaciones hidrometeorológicas
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Acceso a información hidrometeorológica en Colombia - Estaciones
+   Radares Meteorológicos
   </a>
  </li>
 </ul>
@@ -235,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../3.ENSO/ENSO.html">
-   Resúmen
+   El Niño - Oscilación del Sur (ENOS)
   </a>
  </li>
 </ul>
@@ -355,7 +355,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Acceso a información hidrometeorológica en Colombia - Estaciones
+   Radares Meteorológicos
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -410,19 +410,18 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
               
               <div>
                 
-  <p><a class="reference internal" href="../../_images/Ideam_logo.png"><img alt="Ideam_Logo" src="../../_images/Ideam_logo.png" style="width: 300px;" /></a></img></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="acceso-a-informacion-hidrometeorologica-en-colombia-estaciones">
-<h1>Acceso a información hidrometeorológica en Colombia - Estaciones<a class="headerlink" href="#acceso-a-informacion-hidrometeorologica-en-colombia-estaciones" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+  <p><a class="reference internal" href="../../_images/attenuation.gif"><img alt="radar-gif" src="../../_images/attenuation.gif" style="width: 500px;" /></a></img></p>
+<div class="tex2jax_ignore mathjax_ignore section" id="radares-meteorologicos">
+<h1>Radares Meteorológicos<a class="headerlink" href="#radares-meteorologicos" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <hr class="docutils" />
 <div class="section" id="resumen">
 <h2>Resumen<a class="headerlink" href="#resumen" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
 <p>En este cuadernillo (Notebook) aprenderemos:</p>
 <ol class="arabic simple">
-<li><p>Introduccion a la red de monitoreo del IDEAM</p></li>
-<li><p>Cátalogo de estaciones de IDEAM</p></li>
-<li><p>Consulta de datos usando la plataforma <a class="reference external" href="https://www.datos.gov.co/">datosabiertos.gov.co</a></p></li>
-<li><p>Consulta de datos de temperatura y precipitación</p></li>
-<li><p>Otros datos disponibles</p></li>
+<li><p>Introducción a la red de Nacional de radares meteorológicos de Colombia</p></li>
+<li><p>Consulta de datos usando el bucket de AWS de <a class="reference external" href="https://registry.opendata.aws/ideam-radares/">radares</a></p></li>
+<li><p>Generación de gráficas de reflectividad</p></li>
+<li><p>Generación de campos de lluvia usando la ecuación de Marshall &amp; Gunn (1953)</p></li>
 </ol>
 </div>
 <div class="section" id="prerequisitos">
@@ -435,17 +434,9 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://foundations.projectpythia.org/core/pandas.html">Introducción a Pandas</a></p></td>
-<td><p>Necesario</p></td>
-<td><p>lectura de datos tabulares</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://foundations.projectpythia.org/core/xarray.html">Introducción a Xarray</a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="https://foundations.projectpythia.org/core/xarray.html">Introducción a Xarray</a></p></td>
 <td><p>Necesario</p></td>
 <td><p>lectura de datos multidimensionales</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://foundations.projectpythia.org/core/datetime/datetime.html">Introducción a Datetime</a></p></td>
-<td><p>Necesario</p></td>
-<td><p>Entender estampas de tiempo</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference external" href="https://projectpythia.org/radar-cookbook/README.html">Introducción a Py-Art</a></p></td>
 <td><p>Necesario</p></td>
@@ -522,13 +513,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Acceso a información hidrometeorológica en Colombia - Estaciones</p>
+            <p class="prev-next-title">Estaciones hidrometeorológicas</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../3.ENSO/ENSO.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Resúmen</p>
+        <p class="prev-next-title">El Niño - Oscilación del Sur (ENOS)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
