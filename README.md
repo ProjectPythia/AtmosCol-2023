@@ -1,6 +1,6 @@
 <img src="atmoscol.jpg" alt="thumbnail" width="800"/>
 
-# Taller de datos científicos con Python AtmosCol 2023
+# Taller de datos científicos con Python y R - AtmosCol 2023
 
 [![nightly-build](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?labpath=notebooks)
@@ -54,7 +54,7 @@ Pueden ejecutar los `notebooks` bien sea usando [Binder](https://mybinder.org/) 
 
 ### Binder
 
-La forma más sencilla de interactuar con un `Jupyter Notebook` es a través de [Binder](https://binder.projectpythia.org/), que permite la ejecución de un [Jupyter Book](https://jupyterbook.org) en la nube. Los detalles de cómo funciona `binder` no son muy relevantes por ahora. Todo lo que necesitamos saber es cómo iniciar un capítulo de Pythia Cookbooks a través de Binder. Simplemente navegue con el mouse hasta la esquina superior derecha del capítulo del libro que está viendo y haga clic en el ícono del cohete y asegúrese de seleccionar "iniciar Binder". Después de un momento, se te presentará un `Jupyter Lab` con el que podrás interactuar. Es decir. Podrás ejecutar e incluso cambiar los programas de ejemplo. Verás que las celdas de código no tienen salida al principio, hasta que las ejecutes presionando `Shift`+`Enter`. Los detalles completos sobre cómo interactuar con un cuaderno Jupyter activo se describen en [Introducción a Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
+La forma más sencilla de interactuar con un `Jupyter Notebook` es a través de [Binder](https://binder.projectpythia.org/), que permite la ejecución de un [Jupyter Book](https://jupyterbook.org) en la nube. Los detalles de cómo funciona `binder` no son muy relevantes por ahora. Todo lo que necesitamos saber es cómo iniciar un capítulo de Pythia Cookbooks a través de Binder. Simplemente navegue con el mouse hasta la esquina superior derecha del capítulo del libro que está viendo y haga clic en el ícono del cohete y asegúrese de seleccionar "iniciar Binder". Después de un momento, se te presentará un `Jupyter Lab` con el que podrás interactuar. Es decir. Podrás ejecutar e incluso cambiar los programas de ejemplo. Verás que las celdas de código no tienen salida al principio, hasta que las ejecutes presionando <kbd>Shift</kbd>+<kbd>Enter</kbd>. Los detalles completos sobre cómo interactuar con un cuaderno Jupyter activo se describen en [Introducción a Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
 
 ### Ejecutar de manera local
 Si está interesado en ejecutar este material localmente en su computadora, deberá seguir este flujo de trabajo:
