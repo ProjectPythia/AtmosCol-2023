@@ -4,3 +4,7 @@ El material consignado en este Cookbook tiene licencia abierta para su uso y reu
 
 El código fuente para este libro esta [Disponible en GitHub](https://github.com/aladinor/Atmoscol2023) y almacenado en Zenodo. El DOI siempre estará lidago a la versión más reciente de este libro: <https://zenodo.org/badge/latestdoi/686482876>
 
+Si el material de **Taller de datos científicos con Python y R - AtmosCol 2023** es útil en un trabajo publicado, puede citar una versión específica del libro como:
+
+Ladino-Rincon A. (2023), Taller de datos científicos con Python y R - AtmosCol 2023 (Versión v2023.09.19) [https://doi.org/10.5281/zenodo.8347110]
+
