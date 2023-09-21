@@ -541,10 +541,17 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
     <a class="reference internal nav-link" href="#funciones">
      3.4 Funciones
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clases">
+       3.5 Clases
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#importar-librerias">
-     3.5 Importar librerias
+     3.6 Importar librerias
     </a>
    </li>
   </ul>
@@ -1274,9 +1281,112 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 </div>
+<div class="section" id="clases">
+<h4>3.5 Clases<a class="headerlink" href="#clases" title="Permalink to this headline"><i class="fas fa-link"></i></a></h4>
+<p>Las clases proveen una forma de describir un objeto en programación. Por ejemplo, vamos a describir un objeto figura usando la siguiente clase</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Figura</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">num_lados</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">tamanio</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_lados</span> <span class="o">=</span> <span class="n">num_lados</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tamanio</span> <span class="o">=</span> <span class="n">tamanio</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si queremos hacer la abtracción de un cuadrado podemos definirlo de la siguiente manera</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span> <span class="o">=</span> <span class="n">Figura</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s1">&#39;Cuadrado&#39;</span><span class="p">,</span> <span class="n">num_lados</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;rojo&#39;</span><span class="p">,</span> <span class="n">tamanio</span><span class="o">=</span><span class="s1">&#39;grande&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para acceder a cada una de las propiedades de este objeto simplemente utilizamos <code class="docutils literal notranslate"><span class="pre">.</span></code> y llamamos el atributo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span><span class="o">.</span><span class="n">nombre</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Cuadrado&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span><span class="o">.</span><span class="n">num_lados</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span><span class="o">.</span><span class="n">tamanio</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;grande&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las clases tambien pueden tener métodos que representan básicamente funciones que pertenecen al objeto</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Figura</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">num_lados</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">tamanio</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_lados</span> <span class="o">=</span> <span class="n">num_lados</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tamanio</span> <span class="o">=</span> <span class="n">tamanio</span>
+
+    <span class="c1"># método o funcion que pertenece al objeto</span>
+    <span class="k">def</span> <span class="nf">imprimir_todo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;nombre = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;número de lados = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_lados</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;color = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;tamaño = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tamanio</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span> <span class="o">=</span> <span class="n">Figura</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s1">&#39;Cuadrado&#39;</span><span class="p">,</span> <span class="n">num_lados</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;rojo&#39;</span><span class="p">,</span> <span class="n">tamanio</span><span class="o">=</span><span class="s1">&#39;grande&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span><span class="o">.</span><span class="n">imprimir_todo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nombre = Cuadrado
+número de lados = 4
+color = rojo
+tamaño = grande
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="importar-librerias">
-<h3>3.5 Importar librerias<a class="headerlink" href="#importar-librerias" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<h3>3.6 Importar librerias<a class="headerlink" href="#importar-librerias" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
 <p>Python es muy popular dentro de la cominidad científica pues utiliza y permite crear paquetes que amplían el lenguaje base de muchas maneras útiles. Para importar librerias en nuestro código en python, solo debemos utilizar la palabra reservada del sistema <code class="docutils literal notranslate"><span class="pre">import</span></code> seguido de la libreria que queremos utilizar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
