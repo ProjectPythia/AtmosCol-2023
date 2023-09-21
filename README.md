@@ -41,11 +41,9 @@ El taller estará compuesto por dos sesiones. En la sesión de la mañana trabaj
 ### Sección 2. Anális de series de tiempo usando R
 
 
-|        Hora         |                     Contenido                      |     Tutor     |  Duración  |
-|:-------------------:|:--------------------------------------------------:|:-------------:|:----------:|
-| 01:30 PM - 02:00 PM |       Análisis y calidad de series de tiempo       | Nestor Bernal | 30 minutos |
-| 02:00 PM - 02:30 PM |            Rellenado de datos faltantes            | Nestor Bernal | 30 minutos |
-| 02:30 PM - 03:00 PM | Homogenización de series de tiempo y modelos ARIMA | Nestor Bernal | 30 minutos |
+|        Hora         |          Contenido           |     Tutor     | Duración  |
+|:-------------------:|:----------------------------:|:-------------:|:---------:|
+| 01:30 PM - 03:00 PM | Análisis de series de tiempo | Nestor Bernal | 1.5 horas |
 
 
 ## Ejecutar los Notebooks
