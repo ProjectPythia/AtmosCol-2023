@@ -7,6 +7,9 @@ parts:
   - caption: Introducción a Python
     chapters:
       - file: notebooks/1.fundamentos/fundamentos-python
+      - file: notebooks/1.fundamentos/Numpy
+      - file: notebooks/1.fundamentos/Pandas
+      - file: notebooks/1.fundamentos/Xarray
   - caption: Acceso a datos hidrometeorológicos
     chapters:
       - file: notebooks/2.acceso-datos/Estaciones
