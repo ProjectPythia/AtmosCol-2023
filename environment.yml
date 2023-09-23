@@ -2,6 +2,8 @@ name: atmoscol2023
 channels:
   - conda-forge
   - nodefaults
+  - pyviz
+  - anaconda
 dependencies:
   - python>=3.9
   - jupyter-book
@@ -30,6 +32,9 @@ dependencies:
   - pip
   - xlrd
   - folium
+  - boto3
+  - datashader
+  - ipywidgets
   - pip:
       - sphinx-pythia-theme
       - pydata-sphinx-theme
