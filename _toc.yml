@@ -4,12 +4,11 @@ parts:
   - caption: Preámbulo
     chapters:
       - file: notebooks/how-to-cite
-  - caption: Introducción a Python
+  - caption: Introducción a la programación científica con Python
     chapters:
       - file: notebooks/1.fundamentos/fundamentos-python
-      - file: notebooks/1.fundamentos/Numpy
-      - file: notebooks/1.fundamentos/Pandas
-      - file: notebooks/1.fundamentos/Xarray
+      - file: notebooks/1.fundamentos/Numpy-Pandas-Xarray.ipynb
+      - file: notebooks/1.fundamentos/PyArt-Xradar.ipynb
   - caption: Acceso a datos hidrometeorológicos
     chapters:
       - file: notebooks/2.acceso-datos/Estaciones
