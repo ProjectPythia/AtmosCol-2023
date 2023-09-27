@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Numpy, Pandas y Xarray &#8212; Taller de datos científicos con Python AtmosCol 2023</title>
+    <title>NumPy, Pandas y Xarray &#8212; Taller de datos científicos con Python AtmosCol 2023</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -211,7 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Numpy, Pandas y Xarray
+   NumPy, Pandas y Xarray
   </a>
  </li>
  <li class="toctree-l1">
@@ -379,9 +379,41 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numpy">
-   1. Numpy
+  <a class="reference internal nav-link" href="#librerias">
+   Librerias
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy">
+   1. NumPy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creacion-de-vectores">
+     1.1 Creación de vectores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generacion-de-matrices-y-vectores">
+     1.2 Generación de matrices y vectores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operaciones-basica-usando-numpy">
+     1.3 Operaciones básica usando NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operaciones-matematicas-mas-complejas">
+     1.4 Operaciones matemáticas más complejas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexado-y-seleccion-de-valores">
+     1.5 Indexado y selección de valores
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pandas">
@@ -423,7 +455,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
                 
   <p><a class="reference internal" href="../../_images/numpy_logo.png"><img alt="np_logo" src="../../_images/numpy_logo.png" style="width: 200px;" /></a></img> <a class="reference internal" href="../../_images/pandas_secondary.svg"><img alt="pd_logo" src="../../_images/pandas_secondary.svg" width="300" /></a></img> <a class="reference internal" href="../../_images/xarray-logo-square.png"><img alt="pd_logo" src="../../_images/xarray-logo-square.png" style="width: 220px;" /></a></img></p>
 <div class="tex2jax_ignore mathjax_ignore section" id="numpy-pandas-y-xarray">
-<h1>Numpy, Pandas y Xarray<a class="headerlink" href="#numpy-pandas-y-xarray" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
+<h1>NumPy, Pandas y Xarray<a class="headerlink" href="#numpy-pandas-y-xarray" title="Permalink to this headline"><i class="fas fa-link"></i></a></h1>
 <hr class="docutils" />
 <div class="section" id="introduccion">
 <h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
@@ -463,9 +495,479 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </ul>
 </div>
 <hr class="docutils" />
+<div class="section" id="librerias">
+<h2>Librerias<a class="headerlink" href="#librerias" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>A continuación presentamos las librerias que vamos a usar durante este cuadernillo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># Manejo de matrices multidimensionales</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Manejo de datos tabulares y series de tiempo</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span> <span class="c1"># Manejo óptimo de datos multidimensionales </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="numpy">
-<h2>1. Numpy<a class="headerlink" href="#numpy" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>Numpy es un paquete o libreria fundamental en <code class="docutils literal notranslate"><span class="pre">Python</span></code>. Esta libreria</p>
+<h2>1. NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p>Numpy es un paquete o libreria fundamental en <code class="docutils literal notranslate"><span class="pre">Python</span></code>. Esta libreria nos permite trabajar principalmente con arreglos y matrices multidimencionales. <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> nos permite realizar operaciones matemáticas, reorganización de matrices, aoperaciones básicas de algebra lineal, análisis estadísticos básicos entre muchas otras operaciones de manera rápida</p>
+<div class="section" id="creacion-de-vectores">
+<h3>1.1 Creación de vectores<a class="headerlink" href="#creacion-de-vectores" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Con numpy podemos realizar creacion de arreglos y vectores en multiples dimensiones usando multiples métodos. La manera mas común de crear un arreglo o matriz es usando el método <code class="docutils literal notranslate"><span class="pre">np.array</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">vector</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Objetos de tipo <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> tienen métodos autocontenidos que nos permiten obterner propiedades como dimensión <code class="docutils literal notranslate"><span class="pre">ndim</span></code>, tamaño <code class="docutils literal notranslate"><span class="pre">shape</span></code> o tipo de datos contenidos <code class="docutils literal notranslate"><span class="pre">dtype</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">.</span><span class="n">ndim</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;int64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora podemos crear una matriz de dos dimensiones de la misma manera</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="n">matriz_2d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 2],
+       [3, 4, 5]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dimensiones = </span><span class="si">{</span><span class="n">matriz_2d</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s2">, forma = </span><span class="si">{</span><span class="n">matriz_2d</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">, y tipo </span><span class="si">{</span><span class="n">matriz_2d</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dimensiones = 2, forma = (2, 3), y tipo int64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generacion-de-matrices-y-vectores">
+<h3>1.2 Generación de matrices y vectores<a class="headerlink" href="#generacion-de-matrices-y-vectores" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> también ofrece funciones y métodos que permiten generar matrices o arreglos igualmente espaciados que nos permiten ahorrar tiempo a la hora de escribirlos. Generalmente <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> usa reglas de indexación de la siguiente manera</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">arange(comienzo,</span> <span class="pre">fin,</span> <span class="pre">paso)</span></code> crea un arreglo o matriz de valores en el intervalo <code class="docutils literal notranslate"><span class="pre">[comienzo,</span> <span class="pre">fin)</span></code> espaciado cada <code class="docutils literal notranslate"><span class="pre">paso</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linspace(comienzo,</span> <span class="pre">fin,</span> <span class="pre">número</span> <span class="pre">de</span> <span class="pre">divisiones)</span></code> crea un arreglo o matriz de valores en el intervalo <code class="docutils literal notranslate"><span class="pre">[comienzo,</span> <span class="pre">fin)</span></code> igualmente espaciado usando <code class="docutils literal notranslate"><span class="pre">número</span> <span class="pre">de</span> <span class="pre">divisiones</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">arreglo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo_espaciado</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">arreglo_espaciado</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operaciones-basica-usando-numpy">
+<h3>1.3 Operaciones básica usando NumPy<a class="headerlink" href="#operaciones-basica-usando-numpy" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Podemos realizar operaciones matemáticas usando <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> teniendo en cuenta que los arreglos o matrices deben tener el mismo tamaño. Las operaciones se realizaran elemento a elemento en cada arreglo matricial</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 2, 4])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">])</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ -1. , 200. ,   1.3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ -1. , 202. ,   5.3])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([   1. , -198. ,    2.7])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ -0. , 400. ,   5.2])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.        ,  0.01      ,  3.07692308])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operaciones-matematicas-mas-complejas">
+<h3>1.4 Operaciones matemáticas más complejas<a class="headerlink" href="#operaciones-matematicas-mas-complejas" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> soporta operaciones matemáticas mas complejas elemento a elemento en cada arreglo matricial. Por ejemplo, calculemos el <code class="docutils literal notranslate"><span class="pre">seno</span></code> de una matriz</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="n">matriz_2d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 2],
+       [3, 4, 5]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">matriz_2d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.        ,  0.84147098,  0.90929743],
+       [ 0.14112001, -0.7568025 , -0.95892427]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora usando la constante <code class="docutils literal notranslate"><span class="pre">pi</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.        , 0.78539816, 1.57079633, 2.35619449, 3.14159265,
+       3.92699082, 4.71238898, 5.49778714, 6.28318531])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.  , 0.25, 0.5 , 0.75, 1.  , 1.25, 1.5 , 1.75, 2.  ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cos_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">cos_t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.00000000e+00,  7.07106781e-01,  6.12323400e-17, -7.07106781e-01,
+       -1.00000000e+00, -7.07106781e-01, -1.83697020e-16,  7.07106781e-01,
+        1.00000000e+00])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos redondear las cifras usando el método <code class="docutils literal notranslate"><span class="pre">round</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">cos_t</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.  ,  0.71,  0.  , -0.71, -1.  , -0.71, -0.  ,  0.71,  1.  ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>También podemos sumar todos elementos de un arreglo usando <code class="docutils literal notranslate"><span class="pre">np.sum</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cos_t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9999999999999996
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para mas funciones matemáticas disponibles en <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> visite este <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.math.html">link</a></p>
+</div>
+<div class="section" id="indexado-y-seleccion-de-valores">
+<h3>1.5 Indexado y selección de valores<a class="headerlink" href="#indexado-y-seleccion-de-valores" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Podemos acceder a los valores dentro de un arreglo matricial multidimencional utilizando el indice del vector o matriz. Recordemos que en <code class="docutils literal notranslate"><span class="pre">Python</span></code> el índice arranca en 0 y que el acceso se realiza usando la notacion <code class="docutils literal notranslate"><span class="pre">[fila,</span> <span class="pre">columna]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">matriz</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para acceder al primer elemento de la matriz de la siguinte manera</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para acceder al elemento ubicado en la fila 2 y la columna 4 tenemos que</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemo acceder a los datos usando el índice en “reversa” para acceder a los ultimos elementos del arreglo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para seleccionar de un rango de valores en un arreglo matricial usamos <code class="docutils literal notranslate"><span class="pre">[comienzo:final[:paso]]</span></code>. Tratamos de seleccionar la primera fila</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2, 3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora la primera fila <strong>sin</strong> incluir el ultimo elemento</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos crear un arreglo unidimensional más largo para observar la selección de un rango de elementos usando un paso determinado</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo_largo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">arreglo_largo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo_largo</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0,  2,  4,  6,  8, 10, 12, 14])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora incluyendo <code class="docutils literal notranslate"><span class="pre">comienzo=3</span></code>, <code class="docutils literal notranslate"><span class="pre">final=13</span></code> <code class="docutils literal notranslate"><span class="pre">paso=2</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo_largo</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">13</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3,  5,  7,  9, 11])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition alert alert-warning">
+<p class="admonition-title">Precaución</p>
+<p>El índice en la selección de rango no incluye el valor de la derecha</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arreglo_largo</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 2])
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el arreglo anterior la selección se realizó entre el índice 0 y el 13 no incluyente</p>
+</div>
 </div>
 <div class="section" id="pandas">
 <h2>2. Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
@@ -570,7 +1072,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 26 September 2023.
+          Last updated on 27 September 2023.
         </p>
       </div>
     </div>
