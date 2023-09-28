@@ -34,6 +34,7 @@ dependencies:
   - boto3
   - datashader
   - ipywidgets
+  - pythia-datasets
   - pip:
       - sphinx-pythia-theme
       - pydata-sphinx-theme
