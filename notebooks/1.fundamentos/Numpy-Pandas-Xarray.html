@@ -419,6 +419,23 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
   <a class="reference internal nav-link" href="#pandas">
    2. Pandas
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-dataframe">
+     2.1 Pandas DataFrame
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pandas-series">
+     2.2. Pandas Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seleccion-de-series-y-cubos-de-datos">
+     2.3 Selección de series y cubos de datos
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#xarray">
@@ -465,6 +482,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <li><p>Introducción pandas</p></li>
 <li><p>Introducción xarray</p></li>
 </ol>
+<p>Este cuadernillo contiene información simplificada de <a class="reference external" href="https://foundations.projectpythia.org/landing-page.html"><code class="docutils literal notranslate"><span class="pre">Pythia</span> <span class="pre">Fundations</span></code></a></p>
 </div>
 <div class="section" id="prerequisitos">
 <h2>Prerequisitos<a class="headerlink" href="#prerequisitos" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
@@ -503,6 +521,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># Manejo de matrices multidimensionales</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># Manejo de datos tabulares y series de tiempo</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span> <span class="c1"># Manejo óptimo de datos multidimensionales </span>
+<span class="kn">from</span> <span class="nn">pythia_datasets</span> <span class="kn">import</span> <span class="n">DATASETS</span> <span class="c1"># datos disponibles en Pythia</span>
 </pre></div>
 </div>
 </div>
@@ -797,7 +816,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9999999999999996
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
@@ -966,11 +985,871 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 </div>
 </div>
-<p>En el arreglo anterior la selección se realizó entre el índice 0 y el 13 no incluyente</p>
+<p>En el arreglo anterior la selección se realizó entre el índice 0 y el 3 no incluyente</p>
 </div>
 </div>
 <div class="section" id="pandas">
 <h2>2. Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> es una de las librerias mas potentes en el ambito de la programación científica. <a class="reference external" href="https://pandas.pydata.org/"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code></a> es una libreria de código abierto que permite la manipulación rápida y facil de datos tabulares en diversos formatos (Excel, texto plano separado por comas, bases de datos, pickle, entre muchos otros). El manejo de datos tabulares y series de tiempo se realiza mediante etiquetas que nos permiten escribir escribir códigos robustos</p>
+<div class="section" id="pandas-dataframe">
+<h3>2.1 Pandas DataFrame<a class="headerlink" href="#pandas-dataframe" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Es un conjunto de datos tabulares en dos dimensiones que usa etiquetas similar a un <strong>hoja de calculo de excel</strong>, una <strong>tabla de datos</strong> o un <code class="docutils literal notranslate"><span class="pre">data.frame</span></code> en R. Los <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> estan compuestos por columnas y filas.</p>
+<p><a class="reference internal" href="../../_images/01_table_dataframe.svg"><img alt="Dataframe" src="../../_images/01_table_dataframe.svg" width="500" /></a></img></p>
+<p>Dentro de cada <code class="docutils literal notranslate"><span class="pre">columna</span></code> podemos tener datos de diferente <code class="docutils literal notranslate"><span class="pre">tipo</span></code> incluyendo numeros, texto, estampas de tiempo, entre otros. En la imagen anterior (Cortesía de Pythia Fundations, CC), la columna de la izquierda, sombreada en color gris, es conocida como el <code class="docutils literal notranslate"><span class="pre">índice</span></code> de filas. Analogamente, la parte superior del <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, podemos encotrar el índice de las <code class="docutils literal notranslate"><span class="pre">columnas</span></code>. Estos indices, de columna y fila, puedes ser de tipo numerico, caracteres, estampas de tiempo entre muchos otros. A continuación, se puede observar un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> de anomalias de la temperatura superfical del mar en las diferentes regiones Niño</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="n">DATASETS</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s1">&#39;enso_data.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading file &#39;enso_data.csv&#39; from &#39;https://github.com/ProjectPythia/pythia-datasets/raw/main/data/enso_data.csv&#39; to &#39;/home/runner/.cache/pythia-datasets&#39;.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>datetime</th>
+      <th>Nino12</th>
+      <th>Nino12anom</th>
+      <th>Nino3</th>
+      <th>Nino3anom</th>
+      <th>Nino4</th>
+      <th>Nino4anom</th>
+      <th>Nino34</th>
+      <th>Nino34anom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1982-01-01</td>
+      <td>24.29</td>
+      <td>-0.17</td>
+      <td>25.87</td>
+      <td>0.24</td>
+      <td>28.30</td>
+      <td>0.00</td>
+      <td>26.72</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1982-02-01</td>
+      <td>25.49</td>
+      <td>-0.58</td>
+      <td>26.38</td>
+      <td>0.01</td>
+      <td>28.21</td>
+      <td>0.11</td>
+      <td>26.70</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1982-03-01</td>
+      <td>25.21</td>
+      <td>-1.31</td>
+      <td>26.98</td>
+      <td>-0.16</td>
+      <td>28.41</td>
+      <td>0.22</td>
+      <td>27.20</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1982-04-01</td>
+      <td>24.50</td>
+      <td>-0.97</td>
+      <td>27.68</td>
+      <td>0.18</td>
+      <td>28.92</td>
+      <td>0.42</td>
+      <td>28.02</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1982-05-01</td>
+      <td>23.97</td>
+      <td>-0.23</td>
+      <td>27.79</td>
+      <td>0.71</td>
+      <td>29.49</td>
+      <td>0.70</td>
+      <td>28.54</td>
+      <td>0.69</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Como podemos observar el índice, tanto en filas y columnas, se  resaltan en <em>negrita</em>. En la filas el indice por defecto es una secuencia numerada que incia en 0 y termina en el numero de filas del set de datos. Para acceder al <code class="docutils literal notranslate"><span class="pre">índice</span></code> en filas podemos usar el atributo <code class="docutils literal notranslate"><span class="pre">.index</span></code> y en columnas <code class="docutils literal notranslate"><span class="pre">.columns</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=472, step=1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aun no hemos aprovechado las ventajas de <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> usando etiquetas en lo <code class="docutils literal notranslate"><span class="pre">índices</span></code>. Esto nos perminitiría trabajar de manera más fácil con los datos contenidos en este set de datos. Para esto, procedermos a utilizar la columna <code class="docutils literal notranslate"><span class="pre">datetime</span></code> como índice de las filas en formato de estampa de tiempo. Para hacer esto podemos pasar una serie de argumento al método <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html"><code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nino12</th>
+      <th>Nino12anom</th>
+      <th>Nino3</th>
+      <th>Nino3anom</th>
+      <th>Nino4</th>
+      <th>Nino4anom</th>
+      <th>Nino34</th>
+      <th>Nino34anom</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1982-01-01</th>
+      <td>24.29</td>
+      <td>-0.17</td>
+      <td>25.87</td>
+      <td>0.24</td>
+      <td>28.30</td>
+      <td>0.00</td>
+      <td>26.72</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>1982-02-01</th>
+      <td>25.49</td>
+      <td>-0.58</td>
+      <td>26.38</td>
+      <td>0.01</td>
+      <td>28.21</td>
+      <td>0.11</td>
+      <td>26.70</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-03-01</th>
+      <td>25.21</td>
+      <td>-1.31</td>
+      <td>26.98</td>
+      <td>-0.16</td>
+      <td>28.41</td>
+      <td>0.22</td>
+      <td>27.20</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-04-01</th>
+      <td>24.50</td>
+      <td>-0.97</td>
+      <td>27.68</td>
+      <td>0.18</td>
+      <td>28.92</td>
+      <td>0.42</td>
+      <td>28.02</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th>1982-05-01</th>
+      <td>23.97</td>
+      <td>-0.23</td>
+      <td>27.79</td>
+      <td>0.71</td>
+      <td>29.49</td>
+      <td>0.70</td>
+      <td>28.54</td>
+      <td>0.69</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Como podemos ver el índice ahora es la columna <code class="docutils literal notranslate"><span class="pre">datetime</span></code> y esta en formato <code class="docutils literal notranslate"><span class="pre">timestamp</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DatetimeIndex([&#39;1982-01-01&#39;, &#39;1982-02-01&#39;, &#39;1982-03-01&#39;, &#39;1982-04-01&#39;,
+               &#39;1982-05-01&#39;, &#39;1982-06-01&#39;, &#39;1982-07-01&#39;, &#39;1982-08-01&#39;,
+               &#39;1982-09-01&#39;, &#39;1982-10-01&#39;,
+               ...
+               &#39;2020-07-01&#39;, &#39;2020-08-01&#39;, &#39;2020-09-01&#39;, &#39;2020-10-01&#39;,
+               &#39;2020-11-01&#39;, &#39;2020-12-01&#39;, &#39;2021-01-01&#39;, &#39;2021-02-01&#39;,
+               &#39;2021-03-01&#39;, &#39;2021-04-01&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;datetime&#39;, length=472, freq=None)
+</pre></div>
+</div>
+</div>
+</div>
+<p>De igaul manera podemos ver los índices / nombres de las columnas de la siguiente manera</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Nino12&#39;, &#39;Nino12anom&#39;, &#39;Nino3&#39;, &#39;Nino3anom&#39;, &#39;Nino4&#39;, &#39;Nino4anom&#39;,
+       &#39;Nino34&#39;, &#39;Nino34anom&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pandas-series">
+<h3>2.2. Pandas Series<a class="headerlink" href="#pandas-series" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Una serie de tiempo en <code class="docutils literal notranslate"><span class="pre">Pandas</span></code> hace refencia a datos tabulares que continenen una sola columna; al igual que un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> puede contener cualquir tipo de dato o variable. En el siguiente ejemplo extraeremos la <code class="docutils literal notranslate"><span class="pre">serie</span></code> de datos de la anomalia de la temperatura superficial de niño en la región 3-4 usando el método de llave-valor <code class="docutils literal notranslate"><span class="pre">['']</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Nino34anom&#39;</span><span class="p">]</span>
+<span class="n">series</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime
+1982-01-01    0.15
+1982-02-01   -0.02
+1982-03-01   -0.02
+1982-04-01    0.24
+1982-05-01    0.69
+Name: Nino34anom, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternativamente, podemos acceder a misma serie de datos usando el método <code class="docutils literal notranslate"><span class="pre">punto</span></code> de la siguiente manera</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Nino34anom</span>
+<span class="n">series</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime
+1982-01-01    0.15
+1982-02-01   -0.02
+1982-03-01   -0.02
+1982-04-01    0.24
+1982-05-01    0.69
+Name: Nino34anom, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="seleccion-de-series-y-cubos-de-datos">
+<h3>2.3 Selección de series y cubos de datos<a class="headerlink" href="#seleccion-de-series-y-cubos-de-datos" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p>Como mencionamos anteriormente, las <em>etiquetas</em> en los índices nos permiten seleccionar un sub set de datos de manera rápida y fácil utilizando las ventajas de <code class="docutils literal notranslate"><span class="pre">Pandas</span></code>. En el ejemplo anterior utilizamos las etiquetas de columna para acceder a la serie de datos correspondiente (Columna). Para acceder a una fila de datos podemos usar la notación e indexación sugerida por <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> sin embargo esta manera <strong>no</strong> es recomendada</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3293/878281628.py:1: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+  series[0]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Preferiblemente debemos usar las etiquetas de la fila de la siguiente manera</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="p">[</span><span class="s1">&#39;2000-09-01&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.51
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si queremos extraer un intervalo de datos podemos usar las etiquetas de índice de filas de la siguiente manera</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="p">[</span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">:</span> <span class="s1">&#39;2001-12-01&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime
+2000-01-01   -1.92
+2000-02-01   -1.53
+2000-03-01   -1.14
+2000-04-01   -0.77
+2000-05-01   -0.73
+2000-06-01   -0.62
+2000-07-01   -0.50
+2000-08-01   -0.37
+2000-09-01   -0.51
+2000-10-01   -0.73
+2000-11-01   -0.87
+2000-12-01   -0.98
+2001-01-01   -0.83
+2001-02-01   -0.61
+2001-03-01   -0.38
+2001-04-01   -0.26
+2001-05-01   -0.25
+2001-06-01    0.03
+2001-07-01    0.10
+2001-08-01    0.05
+2001-09-01   -0.17
+2001-10-01   -0.10
+2001-11-01   -0.20
+2001-12-01   -0.40
+Name: Nino34anom, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code> usa una herramienta muy util para hacer seleccion de datos usando <code class="docutils literal notranslate"><span class="pre">slice</span></code>. Esta función autocontenida nos permite crear cortes en intervalos de la siguiente manera <code class="docutils literal notranslate"><span class="pre">[comiezo,</span> <span class="pre">fin,</span> <span class="pre">paso]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="p">[</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2001-12-01&#39;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime
+2000-01-01   -1.92
+2000-02-01   -1.53
+2000-03-01   -1.14
+2000-04-01   -0.77
+2000-05-01   -0.73
+2000-06-01   -0.62
+2000-07-01   -0.50
+2000-08-01   -0.37
+2000-09-01   -0.51
+2000-10-01   -0.73
+2000-11-01   -0.87
+2000-12-01   -0.98
+2001-01-01   -0.83
+2001-02-01   -0.61
+2001-03-01   -0.38
+2001-04-01   -0.26
+2001-05-01   -0.25
+2001-06-01    0.03
+2001-07-01    0.10
+2001-08-01    0.05
+2001-09-01   -0.17
+2001-10-01   -0.10
+2001-11-01   -0.20
+2001-12-01   -0.40
+Name: Nino34anom, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los datos tambien pueden ser seleccionados usando el método <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html"><code class="docutils literal notranslate"><span class="pre">loc</span></code></a> que también nos permite acceder por etiquetas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-01-01&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.15
+</pre></div>
+</div>
+</div>
+</div>
+<p>o su equivalente usando el índice <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html"><code class="docutils literal notranslate"><span class="pre">iloc</span></code></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora que sabemos los fundamentos básicos de seleccion de datos en series temporales, podemos pasar a seleccionar datos en <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>. Para accerder a multiples columnas usamos la siguiente notación</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Nino34anom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># para una sola columna</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime
+1982-01-01    0.15
+1982-02-01   -0.02
+1982-03-01   -0.02
+1982-04-01    0.24
+1982-05-01    0.69
+Name: Nino34anom, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Nino34&#39;</span><span class="p">,</span> <span class="s1">&#39;Nino34anom&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># para multiples columnas</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nino34</th>
+      <th>Nino34anom</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1982-01-01</th>
+      <td>26.72</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>1982-02-01</th>
+      <td>26.70</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-03-01</th>
+      <td>27.20</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-04-01</th>
+      <td>28.02</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th>1982-05-01</th>
+      <td>28.54</td>
+      <td>0.69</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Acceder a las etiquetas de fila y columnas es preferible usar el método <code class="docutils literal notranslate"><span class="pre">loc</span></code> de la siguiente manera <code class="docutils literal notranslate"><span class="pre">.loc[filas,</span> <span class="pre">columnas]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-04-01&quot;</span><span class="p">,</span> <span class="s2">&quot;Nino34&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.02
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-04-01&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nino12        24.50
+Nino12anom    -0.97
+Nino3         27.68
+Nino3anom      0.18
+Nino4         28.92
+Nino4anom      0.42
+Nino34        28.02
+Nino34anom     0.24
+Name: 1982-04-01 00:00:00, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-01-01&quot;</span><span class="p">:</span><span class="s2">&quot;1982-12-01&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nino12</th>
+      <th>Nino12anom</th>
+      <th>Nino3</th>
+      <th>Nino3anom</th>
+      <th>Nino4</th>
+      <th>Nino4anom</th>
+      <th>Nino34</th>
+      <th>Nino34anom</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1982-01-01</th>
+      <td>24.29</td>
+      <td>-0.17</td>
+      <td>25.87</td>
+      <td>0.24</td>
+      <td>28.30</td>
+      <td>0.00</td>
+      <td>26.72</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>1982-02-01</th>
+      <td>25.49</td>
+      <td>-0.58</td>
+      <td>26.38</td>
+      <td>0.01</td>
+      <td>28.21</td>
+      <td>0.11</td>
+      <td>26.70</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-03-01</th>
+      <td>25.21</td>
+      <td>-1.31</td>
+      <td>26.98</td>
+      <td>-0.16</td>
+      <td>28.41</td>
+      <td>0.22</td>
+      <td>27.20</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-04-01</th>
+      <td>24.50</td>
+      <td>-0.97</td>
+      <td>27.68</td>
+      <td>0.18</td>
+      <td>28.92</td>
+      <td>0.42</td>
+      <td>28.02</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th>1982-05-01</th>
+      <td>23.97</td>
+      <td>-0.23</td>
+      <td>27.79</td>
+      <td>0.71</td>
+      <td>29.49</td>
+      <td>0.70</td>
+      <td>28.54</td>
+      <td>0.69</td>
+    </tr>
+    <tr>
+      <th>1982-06-01</th>
+      <td>22.89</td>
+      <td>0.07</td>
+      <td>27.46</td>
+      <td>1.03</td>
+      <td>29.76</td>
+      <td>0.92</td>
+      <td>28.75</td>
+      <td>1.10</td>
+    </tr>
+    <tr>
+      <th>1982-07-01</th>
+      <td>22.47</td>
+      <td>0.87</td>
+      <td>26.44</td>
+      <td>0.82</td>
+      <td>29.38</td>
+      <td>0.58</td>
+      <td>28.10</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <th>1982-08-01</th>
+      <td>21.75</td>
+      <td>1.10</td>
+      <td>26.15</td>
+      <td>1.16</td>
+      <td>29.04</td>
+      <td>0.36</td>
+      <td>27.93</td>
+      <td>1.11</td>
+    </tr>
+    <tr>
+      <th>1982-09-01</th>
+      <td>21.80</td>
+      <td>1.44</td>
+      <td>26.52</td>
+      <td>1.67</td>
+      <td>29.16</td>
+      <td>0.47</td>
+      <td>28.11</td>
+      <td>1.39</td>
+    </tr>
+    <tr>
+      <th>1982-10-01</th>
+      <td>22.94</td>
+      <td>2.12</td>
+      <td>27.11</td>
+      <td>2.19</td>
+      <td>29.38</td>
+      <td>0.72</td>
+      <td>28.64</td>
+      <td>1.95</td>
+    </tr>
+    <tr>
+      <th>1982-11-01</th>
+      <td>24.59</td>
+      <td>3.00</td>
+      <td>27.62</td>
+      <td>2.64</td>
+      <td>29.23</td>
+      <td>0.60</td>
+      <td>28.81</td>
+      <td>2.16</td>
+    </tr>
+    <tr>
+      <th>1982-12-01</th>
+      <td>26.13</td>
+      <td>3.34</td>
+      <td>28.39</td>
+      <td>3.25</td>
+      <td>29.15</td>
+      <td>0.66</td>
+      <td>29.21</td>
+      <td>2.64</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-01-01&quot;</span><span class="p">:</span><span class="s2">&quot;1982-12-01&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Nino34&#39;</span><span class="p">,</span> <span class="s1">&#39;Nino34anom&#39;</span><span class="p">]</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nino34</th>
+      <th>Nino34anom</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1982-01-01</th>
+      <td>26.72</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>1982-02-01</th>
+      <td>26.70</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-03-01</th>
+      <td>27.20</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-04-01</th>
+      <td>28.02</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th>1982-05-01</th>
+      <td>28.54</td>
+      <td>0.69</td>
+    </tr>
+    <tr>
+      <th>1982-06-01</th>
+      <td>28.75</td>
+      <td>1.10</td>
+    </tr>
+    <tr>
+      <th>1982-07-01</th>
+      <td>28.10</td>
+      <td>0.88</td>
+    </tr>
+    <tr>
+      <th>1982-08-01</th>
+      <td>27.93</td>
+      <td>1.11</td>
+    </tr>
+    <tr>
+      <th>1982-09-01</th>
+      <td>28.11</td>
+      <td>1.39</td>
+    </tr>
+    <tr>
+      <th>1982-10-01</th>
+      <td>28.64</td>
+      <td>1.95</td>
+    </tr>
+    <tr>
+      <th>1982-11-01</th>
+      <td>28.81</td>
+      <td>2.16</td>
+    </tr>
+    <tr>
+      <th>1982-12-01</th>
+      <td>29.21</td>
+      <td>2.64</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Para mas funciones y operaciones se puede consultar la documentación oficial de <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code></a></p>
+</div>
 </div>
 <div class="section" id="xarray">
 <h2>3. Xarray<a class="headerlink" href="#xarray" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
@@ -1072,7 +1951,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 27 September 2023.
+          Last updated on 28 September 2023.
         </p>
       </div>
     </div>
