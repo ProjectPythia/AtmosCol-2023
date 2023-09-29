@@ -435,6 +435,16 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
      2.3 Selección de series y cubos de datos
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analisis-exploratorios">
+     2.4 Análisis exploratorios
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graficos-rapidos">
+     2.6 Gráficos rápidos
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -1326,7 +1336,7 @@ Name: Nino34anom, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3293/878281628.py:1: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2383/878281628.py:1: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   series[0]
 </pre></div>
 </div>
@@ -1338,12 +1348,12 @@ Name: Nino34anom, dtype: float64
 <p>Preferiblemente debemos usar las etiquetas de la fila de la siguiente manera</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="p">[</span><span class="s1">&#39;2000-09-01&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="p">[</span><span class="s1">&#39;1982-01-01&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.51
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.15
 </pre></div>
 </div>
 </div>
@@ -1424,7 +1434,7 @@ Name: Nino34anom, dtype: float64
 </div>
 </div>
 </div>
-<p>Los datos tambien pueden ser seleccionados usando el método <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html"><code class="docutils literal notranslate"><span class="pre">loc</span></code></a> que también nos permite acceder por etiquetas</p>
+<p>El método <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html"><code class="docutils literal notranslate"><span class="pre">loc</span></code></a> también nos permite acceder por etiquetas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-01-01&quot;</span><span class="p">]</span>
@@ -1450,7 +1460,7 @@ Name: Nino34anom, dtype: float64
 </div>
 </div>
 </div>
-<p>Ahora que sabemos los fundamentos básicos de seleccion de datos en series temporales, podemos pasar a seleccionar datos en <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>. Para accerder a multiples columnas usamos la siguiente notación</p>
+<p>Ahora que sabemos los fundamentos básicos de seleccion de datos en series temporales, podemos pasar a seleccionar datos en <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>. Para accerder a <strong>una sola</strong> columna usamos la notación de diccionario <code class="docutils literal notranslate"><span class="pre">llave/valor</span></code> como vimos anteriormente</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Nino34anom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># para una sola columna</span>
@@ -1469,9 +1479,10 @@ Name: Nino34anom, dtype: float64
 </div>
 </div>
 </div>
+<p>Para seleccionar multiples <code class="docutils literal notranslate"><span class="pre">columnas</span></code> se utiliza doble corchete cuadrado anidado <code class="docutils literal notranslate"><span class="pre">[['col1',</span> <span class="pre">'col2',</span> <span class="pre">...,</span> <span class="pre">'coln']]</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Nino34&#39;</span><span class="p">,</span> <span class="s1">&#39;Nino34anom&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># para multiples columnas</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Nino34&#39;</span><span class="p">,</span> <span class="s1">&#39;Nino34anom&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> 
 </pre></div>
 </div>
 </div>
@@ -1533,7 +1544,7 @@ Name: Nino34anom, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>Acceder a las etiquetas de fila y columnas es preferible usar el método <code class="docutils literal notranslate"><span class="pre">loc</span></code> de la siguiente manera <code class="docutils literal notranslate"><span class="pre">.loc[filas,</span> <span class="pre">columnas]</span></code></p>
+<p>Seleccionar datos usando etiquetas de fila y columnas se puede llevar a cabo usando el método <code class="docutils literal notranslate"><span class="pre">loc</span></code> de la siguiente manera <code class="docutils literal notranslate"><span class="pre">.loc[filas,</span> <span class="pre">columnas]</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-04-01&quot;</span><span class="p">,</span> <span class="s2">&quot;Nino34&quot;</span><span class="p">]</span>
@@ -1546,6 +1557,7 @@ Name: Nino34anom, dtype: float64
 </div>
 </div>
 </div>
+<p>Si seleccionamos datos unicamente por la <code class="docutils literal notranslate"><span class="pre">etiqueta</span></code> de la <code class="docutils literal notranslate"><span class="pre">fila</span></code> nos retornará una serie con el los datos de todas las <code class="docutils literal notranslate"><span class="pre">columnas</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-04-01&quot;</span><span class="p">]</span>
@@ -1566,6 +1578,7 @@ Name: 1982-04-01 00:00:00, dtype: float64
 </div>
 </div>
 </div>
+<p>Podemos seleccionar un rango de fechas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-01-01&quot;</span><span class="p">:</span><span class="s2">&quot;1982-12-01&quot;</span><span class="p">]</span>
@@ -1749,9 +1762,10 @@ Name: 1982-04-01 00:00:00, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>De igual modo podemos seleccionar un <code class="docutils literal notranslate"><span class="pre">cubo</span></code> de datos combinando los métodos anteriormente vistos</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-01-01&quot;</span><span class="p">:</span><span class="s2">&quot;1982-12-01&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Nino34&#39;</span><span class="p">,</span> <span class="s1">&#39;Nino34anom&#39;</span><span class="p">]</span> <span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1982-01-01&quot;</span><span class="p">:</span><span class="s2">&quot;1982-12-01&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Nino34&#39;</span><span class="p">,</span> <span class="s1">&#39;Nino34anom&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 </div>
@@ -1848,12 +1862,501 @@ Name: 1982-04-01 00:00:00, dtype: float64
 </table>
 </div></div></div>
 </div>
+</div>
+<div class="section" id="analisis-exploratorios">
+<h3>2.4 Análisis exploratorios<a class="headerlink" href="#analisis-exploratorios" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> nos permite visualizar las primeras y últimas filas de los <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> usando <code class="docutils literal notranslate"><span class="pre">.head()</span></code> y <code class="docutils literal notranslate"><span class="pre">.tail()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nino12</th>
+      <th>Nino12anom</th>
+      <th>Nino3</th>
+      <th>Nino3anom</th>
+      <th>Nino4</th>
+      <th>Nino4anom</th>
+      <th>Nino34</th>
+      <th>Nino34anom</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1982-01-01</th>
+      <td>24.29</td>
+      <td>-0.17</td>
+      <td>25.87</td>
+      <td>0.24</td>
+      <td>28.30</td>
+      <td>0.00</td>
+      <td>26.72</td>
+      <td>0.15</td>
+    </tr>
+    <tr>
+      <th>1982-02-01</th>
+      <td>25.49</td>
+      <td>-0.58</td>
+      <td>26.38</td>
+      <td>0.01</td>
+      <td>28.21</td>
+      <td>0.11</td>
+      <td>26.70</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-03-01</th>
+      <td>25.21</td>
+      <td>-1.31</td>
+      <td>26.98</td>
+      <td>-0.16</td>
+      <td>28.41</td>
+      <td>0.22</td>
+      <td>27.20</td>
+      <td>-0.02</td>
+    </tr>
+    <tr>
+      <th>1982-04-01</th>
+      <td>24.50</td>
+      <td>-0.97</td>
+      <td>27.68</td>
+      <td>0.18</td>
+      <td>28.92</td>
+      <td>0.42</td>
+      <td>28.02</td>
+      <td>0.24</td>
+    </tr>
+    <tr>
+      <th>1982-05-01</th>
+      <td>23.97</td>
+      <td>-0.23</td>
+      <td>27.79</td>
+      <td>0.71</td>
+      <td>29.49</td>
+      <td>0.70</td>
+      <td>28.54</td>
+      <td>0.69</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nino12</th>
+      <th>Nino12anom</th>
+      <th>Nino3</th>
+      <th>Nino3anom</th>
+      <th>Nino4</th>
+      <th>Nino4anom</th>
+      <th>Nino34</th>
+      <th>Nino34anom</th>
+    </tr>
+    <tr>
+      <th>datetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-12-01</th>
+      <td>22.16</td>
+      <td>-0.60</td>
+      <td>24.38</td>
+      <td>-0.83</td>
+      <td>27.65</td>
+      <td>-0.95</td>
+      <td>25.53</td>
+      <td>-1.12</td>
+    </tr>
+    <tr>
+      <th>2021-01-01</th>
+      <td>23.89</td>
+      <td>-0.64</td>
+      <td>25.06</td>
+      <td>-0.55</td>
+      <td>27.10</td>
+      <td>-1.25</td>
+      <td>25.58</td>
+      <td>-0.99</td>
+    </tr>
+    <tr>
+      <th>2021-02-01</th>
+      <td>25.55</td>
+      <td>-0.66</td>
+      <td>25.80</td>
+      <td>-0.57</td>
+      <td>27.20</td>
+      <td>-1.00</td>
+      <td>25.81</td>
+      <td>-0.92</td>
+    </tr>
+    <tr>
+      <th>2021-03-01</th>
+      <td>26.48</td>
+      <td>-0.26</td>
+      <td>26.80</td>
+      <td>-0.39</td>
+      <td>27.79</td>
+      <td>-0.55</td>
+      <td>26.75</td>
+      <td>-0.51</td>
+    </tr>
+    <tr>
+      <th>2021-04-01</th>
+      <td>24.89</td>
+      <td>-0.80</td>
+      <td>26.96</td>
+      <td>-0.65</td>
+      <td>28.47</td>
+      <td>-0.21</td>
+      <td>27.40</td>
+      <td>-0.49</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Para conocer la información de tipo de datos, número de datos faltantes y otras propiedades del <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> podemos usar el método <code class="docutils literal notranslate"><span class="pre">.info()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+DatetimeIndex: 472 entries, 1982-01-01 to 2021-04-01
+Data columns (total 8 columns):
+ #   Column      Non-Null Count  Dtype  
+---  ------      --------------  -----  
+ 0   Nino12      472 non-null    float64
+ 1   Nino12anom  472 non-null    float64
+ 2   Nino3       472 non-null    float64
+ 3   Nino3anom   472 non-null    float64
+ 4   Nino4       472 non-null    float64
+ 5   Nino4anom   472 non-null    float64
+ 6   Nino34      472 non-null    float64
+ 7   Nino34anom  472 non-null    float64
+dtypes: float64(8)
+memory usage: 49.4 KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos usar el método <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> para acceder a una descripción estadística rápida del <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nino12</th>
+      <th>Nino12anom</th>
+      <th>Nino3</th>
+      <th>Nino3anom</th>
+      <th>Nino4</th>
+      <th>Nino4anom</th>
+      <th>Nino34</th>
+      <th>Nino34anom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>472.000000</td>
+      <td>472.000000</td>
+      <td>472.000000</td>
+      <td>472.000000</td>
+      <td>472.000000</td>
+      <td>472.000000</td>
+      <td>472.000000</td>
+      <td>472.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>23.209619</td>
+      <td>0.059725</td>
+      <td>25.936568</td>
+      <td>0.039428</td>
+      <td>28.625064</td>
+      <td>0.063814</td>
+      <td>27.076780</td>
+      <td>0.034894</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>2.431522</td>
+      <td>1.157590</td>
+      <td>1.349621</td>
+      <td>0.965464</td>
+      <td>0.755422</td>
+      <td>0.709401</td>
+      <td>1.063004</td>
+      <td>0.947936</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>18.570000</td>
+      <td>-2.100000</td>
+      <td>23.030000</td>
+      <td>-2.070000</td>
+      <td>26.430000</td>
+      <td>-1.870000</td>
+      <td>24.270000</td>
+      <td>-2.380000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>21.152500</td>
+      <td>-0.712500</td>
+      <td>24.850000</td>
+      <td>-0.600000</td>
+      <td>28.140000</td>
+      <td>-0.430000</td>
+      <td>26.330000</td>
+      <td>-0.572500</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>22.980000</td>
+      <td>-0.160000</td>
+      <td>25.885000</td>
+      <td>-0.115000</td>
+      <td>28.760000</td>
+      <td>0.205000</td>
+      <td>27.100000</td>
+      <td>0.015000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>25.322500</td>
+      <td>0.515000</td>
+      <td>26.962500</td>
+      <td>0.512500</td>
+      <td>29.190000</td>
+      <td>0.630000</td>
+      <td>27.792500</td>
+      <td>0.565000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>29.150000</td>
+      <td>4.620000</td>
+      <td>29.140000</td>
+      <td>3.620000</td>
+      <td>30.300000</td>
+      <td>1.670000</td>
+      <td>29.600000</td>
+      <td>2.950000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Podemos calcular el valor medio de una <code class="docutils literal notranslate"><span class="pre">serie</span></code> o un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> usando el metodo <code class="docutils literal notranslate"><span class="pre">.mean()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Nino34anom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.03489406779661016
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nino12        23.209619
+Nino12anom     0.059725
+Nino3         25.936568
+Nino3anom      0.039428
+Nino4         28.625064
+Nino4anom      0.063814
+Nino34        27.076780
+Nino34anom     0.034894
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>El método <code class="docutils literal notranslate"><span class="pre">.mean()</span></code> calcula el valor medio a lo largo de las <code class="docutils literal notranslate"><span class="pre">columnas</span></code>, sin embargo podemos calcular la media a lo largo de las filas usando el argumento <code class="docutils literal notranslate"><span class="pre">axis</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime
+1982-01-01    13.17500
+1982-02-01    13.28750
+1982-03-01    13.31625
+1982-04-01    13.62375
+1982-05-01    13.95750
+                ...   
+2020-12-01    12.02750
+2021-01-01    12.27500
+2021-02-01    12.65125
+2021-03-01    13.26375
+2021-04-01    13.19625
+Length: 472, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>De manera similar podemos calcular la desviación estandar usando el método <code class="docutils literal notranslate"><span class="pre">.std()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nino12        2.431522
+Nino12anom    1.157590
+Nino3         1.349621
+Nino3anom     0.965464
+Nino4         0.755422
+Nino4anom     0.709401
+Nino34        1.063004
+Nino34anom    0.947936
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
 <p>Para mas funciones y operaciones se puede consultar la documentación oficial de <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html"><code class="docutils literal notranslate"><span class="pre">Pandas</span></code></a></p>
+</div>
+<div class="section" id="graficos-rapidos">
+<h3>2.6 Gráficos rápidos<a class="headerlink" href="#graficos-rapidos" title="Permalink to this headline"><i class="fas fa-link"></i></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> nos permite generar gráficos rápidos que también nos permiten hacer análisis exploratorios de los datos. Pandas contiene el metodo <code class="docutils literal notranslate"><span class="pre">.plot</span></code> para generar plots sin necesidad de usar <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Nino34</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/de73899ad8ed622df31e81a962ac12b819e4257c0452ac1c188054925e9781a6.png" src="../../_images/de73899ad8ed622df31e81a962ac12b819e4257c0452ac1c188054925e9781a6.png" />
+</div>
+</div>
+<p>el método <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> genera un gráfico de tipo linea simple. Sin embargo, Podemos generar gráficos mas complejos utilizando otros métodos como <code class="docutils literal notranslate"><span class="pre">.hist</span></code> que retorna un histográma</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">Nino34</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">();</span>
+<span class="c1"># df[[&#39;Nino12&#39;, &#39;Nino34&#39;]].plot.hist();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ce272eef6b16388337a43ac57d4e7f5401a19ef115463f3aceeb6394225ff46e.png" src="../../_images/ce272eef6b16388337a43ac57d4e7f5401a19ef115463f3aceeb6394225ff46e.png" />
+</div>
+</div>
+<p>O simplemente un diagrama de cajas nos permitiría conocer los datos de una manera más sencilla.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Nino12&#39;</span><span class="p">,</span> <span class="s1">&#39;Nino34&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0cbebcedad9328e9ff2a65e8ce663faec77a3040ea2b7129b85e2beaa8d10de2.png" src="../../_images/0cbebcedad9328e9ff2a65e8ce663faec77a3040ea2b7129b85e2beaa8d10de2.png" />
+</div>
+</div>
+<p>Para mas información de gráficos pueden consultar en este <a class="reference external" href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html">link</a></p>
 </div>
 </div>
 <div class="section" id="xarray">
 <h2>3. Xarray<a class="headerlink" href="#xarray" title="Permalink to this headline"><i class="fas fa-link"></i></a></h2>
-<p>En Python, un programa puede ser una sola línea de código</p>
+<p><code class="docutils literal notranslate"><span class="pre">Xarray</span></code></p>
 </div>
 <hr class="docutils" />
 <div class="section" id="conclusiones">
@@ -1951,7 +2454,7 @@ Name: 1982-04-01 00:00:00, dtype: float64
         
           By the <a href="https://projectpythia.org/">Project Pythia</a> Community.
         
-          Last updated on 28 September 2023.
+          Last updated on 29 September 2023.
         </p>
       </div>
     </div>
