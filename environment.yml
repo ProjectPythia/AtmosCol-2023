@@ -28,13 +28,14 @@ dependencies:
   - xmovie
   - ffmpeg
   - xradar
-  - pip
   - xlrd
   - folium
   - boto3
   - datashader
   - ipywidgets
   - pythia-datasets
+  - wradlib
+  - pip
   - pip:
       - sphinx-pythia-theme
       - pydata-sphinx-theme
