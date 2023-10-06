@@ -36,9 +36,11 @@ dependencies:
   - pythia-datasets
   - wradlib
   - cmweather
+  - siphon
   - pip
   - pip:
       - sphinx-pythia-theme
       - pydata-sphinx-theme
       - xmip
       - sodapy
+      - pydap
