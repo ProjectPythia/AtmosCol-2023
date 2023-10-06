@@ -6,18 +6,18 @@ parts:
       - file: notebooks/how-to-cite
   - caption: Introducción a la programación científica con Python
     chapters:
-      - file: notebooks/1.fundamentos/fundamentos-python
-      - file: notebooks/1.fundamentos/Numpy-Pandas-Xarray.ipynb
-      - file: notebooks/1.fundamentos/PyArt-Xradar.ipynb
+      - file: notebooks/1.fundamentos/1.1Fundamentos-python
+      - file: notebooks/1.fundamentos/1.2Numpy-Pandas-Xarray.ipynb
+      - file: notebooks/1.fundamentos/1.3PyArt-Xradar.ipynb
   - caption: Acceso a datos hidrometeorológicos
     chapters:
-      - file: notebooks/2.acceso-datos/Estaciones
-      - file: notebooks/2.acceso-datos/Radares
-      - file: notebooks/2.acceso-datos/Satellite
+      - file: notebooks/2.acceso-datos/2.1Estaciones
+      - file: notebooks/2.acceso-datos/2.2Radares
+      - file: notebooks/2.acceso-datos/2.3GFS
   - caption: ENOS
     chapters:
-      - file: notebooks/3.ENSO/ENSO
+      - file: notebooks/3.ENSO/3.1ENSO
   - caption: Cambio Climático
     chapters:
-      - file: notebooks/4.cambio-climatico/Global-Mean-SST
+      - file: notebooks/4.cambio-climatico/4.1Global-Mean-SST
 
