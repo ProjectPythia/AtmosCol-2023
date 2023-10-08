@@ -1,7 +1,6 @@
 name: atmoscol2023
 channels:
   - conda-forge
-  - nodefaults
   - pyviz
 dependencies:
   - python>=3.9
