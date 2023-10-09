@@ -11,9 +11,9 @@ parts:
       - file: notebooks/1.fundamentos/1.3PyArt-Xradar.ipynb
   - caption: Acceso a datos hidrometeorológicos
     chapters:
-      - file: notebooks/2.acceso-datos/2.1Estaciones
-      - file: notebooks/2.acceso-datos/2.2Radares
-      - file: notebooks/2.acceso-datos/2.3GFS
+      - file: notebooks/2.acceso-datos/2.1.Estaciones
+      - file: notebooks/2.acceso-datos/2.2.Radares
+      - file: notebooks/2.acceso-datos/2.3.GFS
   - caption: ENOS
     chapters:
       - file: notebooks/3.ENSO/3.1ENSO
