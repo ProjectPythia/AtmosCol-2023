@@ -43,7 +43,7 @@ El taller estará compuesto por dos sesiones. En la sesión de la mañana trabaj
 
 |        Hora         |          Contenido           |     Tutor     | Duración  |
 |:-------------------:|:----------------------------:|:-------------:|:---------:|
-| 01:30 PM - 03:00 PM | Análisis de series de tiempo | Nestor Bernal | 1.5 horas |
+| 01:30 PM - 03:00 PM | Homogenización de series de tiempo mensuales de precipitación en R | Néstor Bernal | 1.5 horas |
 
 
 ## Ejecutar los Notebooks
