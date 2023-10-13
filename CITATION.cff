@@ -7,11 +7,6 @@ authors:
     website: https://github.com/aladinor
     orcid: https://orcid.org/0000-0001-8081-7827
     affiliation: University of Illinois at Urbana Champaign
-  - family-names: Grover
-    given-names: Maxwell
-    orcid: https://orcid.org/0000-0002-0370-8974 # optional
-    website: https://github.com/mgrover1
-    affiliation: Argonne National Laboratory # optional
   - name: "AtmosCol 2023" # use the 'name' field to acknowledge organizations
     website: "https://www.uniquindio.edu.co/atmoscol2023/"
 title: "AtmosCol 2023"
