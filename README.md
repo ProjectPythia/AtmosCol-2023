@@ -1,19 +1,32 @@
 <img src="atmoscol.jpg" alt="thumbnail" width="800"/>
 
-# Taller de datos científicos con Python y R - AtmosCol 2023
+# Taller de datos científicos con `Python` y `R` - AtmosCol 2023
 
-[![nightly-build](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/cookbook-template/actions/workflows/nightly-build.yaml)
+[![nightly-build](https://github.com/aladinor/Atmoscol2023/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/aladinor/Atmoscol2023/actions/workflows/nightly-build.yaml)
 [![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?labpath=notebooks)
-[![DOI](https://zenodo.org/badge/686482876.svg)](https://zenodo.org/badge/latestdoi/686482876)
+[![DOI](https://zenodo.org/badge/686482876.svg)](https://zenodo.org/doi/10.5281/zenodo.8316796)
 
 
 ## Motivación
 
-Introducción a la programación científica con Python y acceso a datos hidrometeorológicos de diversas fuentes.
+Este taller de iniciación a la programación científica con Python y R - AtmosCol 2023 tiene como objetivo promover el paradigma emergente 
+de investigación conocido como **'ciencia abierta'**. Este enfoque busca fomentar el acceso y la inclusión a los datos 
+hidrometeorológicos de diversas fuentes, así como la reproducibilidad de los códigos, con el fin de impulsar el 
+desarrollo colaborativo y la participación en actividades científicas en todos los niveles de la sociedad.
+
+La ciencia abierta aboga por la **transparencia** y la **colaboración** en la investigación científica, fomentando la 
+**disponibilidad** de datos científicos, la capacidad de **reproducir los resultados**, y la **inclusión** de diversos sectores 
+de la **sociedad** en el proceso de investigación. Además, promueve la **comunicación efectiva** de los resultados científicos 
+y la **divulgación del conocimiento** en beneficio de la comunidad en general.
+
+En el marco de este taller, se capacitará a los participantes en el uso de herramientas poderosas como `Python` y `R` para 
+trabajar con datos hidrometeorológicos y llevar a cabo **análisis científicos**. De esta manera, se empoderará a los 
+asistentes para contribuir de manera efectiva a la **investigación científica abierta**, lo que puede tener un impacto 
+significativo en el avance de la ciencia y en la **toma de decisiones informadas en Colombia**.
 
 ## Autores
 
-Comité científico y organizador de AtmosCol 2023
+[Alfonso Ladino-Rincon](https://github.com/aladinor)
 
 ### Colaboradores
 
@@ -22,7 +35,7 @@ Comité científico y organizador de AtmosCol 2023
 </a>
 
 ## Estructura
-El taller estará compuesto por dos sesiones. En la sesión de la mañana trabajeremos con Python y acceso a los datos hidrometeorológicos de diversas fuentes. En la sesión de la tarde trabajaremos anális de series de tiempo usando R.
+El taller estará compuesto por dos sesiones. En la sesión de la mañana trabajeremos con `Python` y acceso a los datos hidrometeorológicos de diversas fuentes. En la sesión de la tarde trabajaremos anális de series de tiempo usando `R`.
 
 ### Sección 1. Acceso a los datos hidrometeorológicos usando Python
 
