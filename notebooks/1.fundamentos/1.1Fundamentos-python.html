@@ -710,7 +710,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#np.arange?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># np.arange?</span>
 </pre></div>
 </div>
 </div>
@@ -722,6 +722,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -776,7 +777,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Tiene una notación decimal</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span>  <span class="mf">3.1416</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1416</span>
 </pre></div>
 </div>
 </div>
@@ -876,7 +877,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Una lista es un contenedor de objetos indicados por corchetes cuadrados:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;mi mamá me mima&quot;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">j</span> <span class="p">,</span> <span class="mf">3.1416</span><span class="p">,</span> <span class="o">-</span><span class="mf">1e3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;mi mamá me mima&quot;</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">j</span><span class="p">,</span> <span class="mf">3.1416</span><span class="p">,</span> <span class="o">-</span><span class="mf">1e3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -933,10 +934,12 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Un diccionario es una colección de objetos etiquetados que se asignan en pares <em>clave:valor</em>. Python usa llaves {} para crear diccionarios:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arctic</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;animales&#39;</span><span class="p">:</span> <span class="s1">&#39;oso polar, morsas, pinguinos y mas&#39;</span><span class="p">,</span>
-          <span class="s1">&#39;tamaño&#39;</span><span class="p">:</span> <span class="mi">13985000</span><span class="p">,</span>
-          <span class="s1">&#39;unidades&#39;</span><span class="p">:</span> <span class="s1">&#39;km2&#39;</span><span class="p">,</span>
-          <span class="s1">&#39;temperatura&#39;</span><span class="p">:</span> <span class="s1">&#39;Muy frio&#39;</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arctic</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;animales&quot;</span><span class="p">:</span> <span class="s2">&quot;oso polar, morsas, pinguinos y mas&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tamaño&quot;</span><span class="p">:</span> <span class="mi">13985000</span><span class="p">,</span>
+    <span class="s2">&quot;unidades&quot;</span><span class="p">:</span> <span class="s2">&quot;km2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;temperatura&quot;</span><span class="p">:</span> <span class="s2">&quot;Muy frio&quot;</span><span class="p">,</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -944,7 +947,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Para acceder a los datos dentro de una lista debemos usar la etiqueta como se muestra a continuación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arctic</span><span class="p">[</span><span class="s1">&#39;animales&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arctic</span><span class="p">[</span><span class="s2">&quot;animales&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -957,7 +960,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Podemos agregar nuevos elementos a la lista de usando etiquetas nuevas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arctic</span><span class="p">[</span><span class="s1">&#39;ubicacion&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Polo Norte&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arctic</span><span class="p">[</span><span class="s2">&quot;ubicacion&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Polo Norte&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -985,7 +988,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Se asignan usando paréntesis <em>()</em> en Python y, una vez definidas, no se pueden modificar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1129,7 +1132,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># potenciación</span>
-<span class="mi">2</span> <span class="o">**</span> <span class="mi">6</span>
+<span class="mi">2</span><span class="o">**</span><span class="mi">6</span>
 </pre></div>
 </div>
 </div>
@@ -1174,12 +1177,12 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Declaración para decisiones lógicas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">mod</span> <span class="o">=</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span>
 <span class="k">if</span> <span class="n">mod</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> es un número par&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> es un número par&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> es un número impar&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> es un número impar&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1200,13 +1203,13 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;w es una cadena de caracteres&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;w es una cadena de caracteres&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> es un número entero&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> es un número entero&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">==</span> <span class="nb">float</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> es un número flotante&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> es un número flotante&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="nb">type</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">==</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> es un boleano&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> es un boleano&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1296,7 +1299,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Las clases proveen una forma de describir un objeto en programación. Por ejemplo, vamos a describir un objeto figura usando la siguiente clase:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Figura</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Figura</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">num_lados</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">tamanio</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">num_lados</span> <span class="o">=</span> <span class="n">num_lados</span>
@@ -1309,7 +1312,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Si queremos hacer la abstracción de un cuadrado podemos definirlo de la siguiente manera:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span> <span class="o">=</span> <span class="n">Figura</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s1">&#39;Cuadrado&#39;</span><span class="p">,</span> <span class="n">num_lados</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;rojo&#39;</span><span class="p">,</span> <span class="n">tamanio</span><span class="o">=</span><span class="s1">&#39;grande&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span> <span class="o">=</span> <span class="n">Figura</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Cuadrado&quot;</span><span class="p">,</span> <span class="n">num_lados</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;rojo&quot;</span><span class="p">,</span> <span class="n">tamanio</span><span class="o">=</span><span class="s2">&quot;grande&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1354,7 +1357,7 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 <p>Las clases también pueden tener métodos que representan básicamente funciones que pertenecen al objeto</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Figura</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Figura</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">num_lados</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">tamanio</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">num_lados</span> <span class="o">=</span> <span class="n">num_lados</span>
@@ -1363,17 +1366,17 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 
     <span class="c1"># método o funcion que pertenece al objeto</span>
     <span class="k">def</span> <span class="nf">imprimir_todo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;nombre = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;número de lados = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_lados</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;color = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;tamaño = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tamanio</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;nombre = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;número de lados = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">num_lados</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;color = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;tamaño = </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">tamanio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span> <span class="o">=</span> <span class="n">Figura</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s1">&#39;Cuadrado&#39;</span><span class="p">,</span> <span class="n">num_lados</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;rojo&#39;</span><span class="p">,</span> <span class="n">tamanio</span><span class="o">=</span><span class="s1">&#39;grande&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">objeto</span> <span class="o">=</span> <span class="n">Figura</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Cuadrado&quot;</span><span class="p">,</span> <span class="n">num_lados</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;rojo&quot;</span><span class="p">,</span> <span class="n">tamanio</span><span class="o">=</span><span class="s2">&quot;grande&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1386,7 +1389,9 @@ All code in Pythia Cookbooks is licensed under Apache 2.0. All other non-code co
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nombre = Cuadrado
-número de lados = 4
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>número de lados = 4
 color = rojo
 tamaño = grande
 </pre></div>
