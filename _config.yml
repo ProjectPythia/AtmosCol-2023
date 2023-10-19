@@ -27,7 +27,15 @@ parse:
 
 sphinx:
   config:
-    linkcheck_ignore: ["https://doi.org/*", "https://zenodo.org/badge/*", "https://8thlight.com/*", "https://cmip6-preprocessing.readthedocs.io/*", "https://docs.google.com/*", "https://github.com/jbusecke/*", "https://www.meted.ucar.edu/*"] # don't run link checker on DOI links since they are immutable
+    linkcheck_ignore: [
+        "https://doi.org/*",
+        "https://zenodo.org/badge/*",
+        "https://8thlight.com/*",
+        "https://cmip6-preprocessing.readthedocs.io/*",
+        "https://docs.google.com/*",
+        "https://github.com/jbusecke/*",
+        "https://www.meted.ucar.edu/*",
+      ] # don't run link checker on DOI links since they are immutable
     nb_execution_raise_on_error: true # raise exception in build if there are notebook errors (this flag is ignored if building on binder)
     html_favicon: notebooks/images/icons/favicon.ico
     html_last_updated_fmt: "%-d %B %Y"
