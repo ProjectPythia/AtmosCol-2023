@@ -26,6 +26,8 @@ significativo en el avance de la ciencia y en la **toma de decisiones informadas
 ## Autores
 
 [Alfonso Ladino-Rincon](https://github.com/aladinor)
+[Nicole Rivera](https://github.com/nicolerivera1)
+[Max Grover](https://github.com/mgrover1)
 
 ### Colaboradores
 
