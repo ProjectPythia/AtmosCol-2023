@@ -7,6 +7,11 @@ authors:
     website: https://github.com/aladinor
     orcid: https://orcid.org/0000-0001-8081-7827
     affiliation: University of Illinois at Urbana Champaign
+  - family-names: Rivera-Parra
+    given-names: Nicole
+    website: https://github.com/nicolerivera1
+    orcid: https://orcid.org/0000-0001-8318-1983
+    affiliation: Universidad de Antioquia
   - name: "AtmosCol 2023" # use the 'name' field to acknowledge organizations
     website: "https://www.uniquindio.edu.co/atmoscol2023/"
 title: "Taller de datos científicos con Python y R - AtmosCol 2023"

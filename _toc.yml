@@ -20,4 +20,3 @@ parts:
   - caption: Cambio Climático
     chapters:
       - file: notebooks/4.cambio-climatico/4.1Global-Mean-SST
-
