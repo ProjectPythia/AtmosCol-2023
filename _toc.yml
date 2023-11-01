@@ -8,7 +8,7 @@ parts:
     chapters:
       - file: notebooks/1.fundamentos/1.1Fundamentos-python
       - file: notebooks/1.fundamentos/1.2Numpy-Pandas-Xarray
-      - file: notebooks/1.fundamentos/1.31.3PyArt-Xradar-Wradlib
+      - file: notebooks/1.fundamentos/1.3PyArt-Xradar-Wradlib
   - caption: Acceso a datos hidrometeorológicos
     chapters:
       - file: notebooks/2.acceso-datos/2.1.Estaciones
