@@ -6,4 +6,4 @@ El código fuente para este libro esta [Disponible en GitHub](https://github.com
 
 Si el material de **Taller de datos científicos con Python y R - AtmosCol 2023** es útil en un trabajo publicado, puede citar una versión específica del libro como:
 
-Ladino-Rincon A. (2023), Taller de datos científicos con Python y R - AtmosCol 2023 (Versión v2023.09.19) [https://doi.org/10.5281/zenodo.8347110]
+Ladino-Rincon A., Rivera N., Grover M. (2023), Taller de datos científicos con Python y R - AtmosCol 2023 (Versión v2023.09.19) [https://doi.org/10.5281/zenodo.8347110]
