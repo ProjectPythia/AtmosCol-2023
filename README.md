@@ -74,7 +74,7 @@ Si está interesado en ejecutar este material localmente en su computadora, debe
 1. Clone el repositorio `https://github.com/aladinor/Atmoscol2023.git` usando el siguiente comando de consola:
 
    ```bash
-    git clone https://github.com/aladinor/Atmoscol2023.git
+    git clone https://github.com/ProjectPythia/AtmosCol-2023
    ```
 
 1. Entre en la carpeta de `Atmoscol2023`
