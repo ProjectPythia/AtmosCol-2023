@@ -6,7 +6,6 @@ dependencies:
   - python>=3.9
   - jupyter-book
   - jupyterlab
-  - jupyter_server
   - h5netcdf
   - h5py
   - netCDF4
