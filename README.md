@@ -2,8 +2,8 @@
 
 # Ciencia de Datos Hidrometeorológicos con Python
 
-[![nightly-build](https://github.com/aladinor/Atmoscol2023/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/aladinor/Atmoscol2023/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/aladinor/Atmoscol2023/main?labpath=notebooks)
+[![nightly-build](https://github.com/ProjectPythia/AtmosCol-2023/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/AtmosCol-2023/actions/workflows/nightly-build.yaml)
+[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/AtmosCol-2023/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/686482876.svg)](https://zenodo.org/doi/10.5281/zenodo.8316796)
 
 ---
@@ -15,11 +15,8 @@ El contenido nace a partir del taller AtmosCol 2023, pero ha sido reorganizado c
 Este libro refleja los principios de la ciencia abierta, promoviendo:
 
 - 📖 Accesibilidad al conocimiento: todo el contenido es libre, interactivo y ejecutable en la nube o localmente.
-
 - 🧪 Reproducibilidad científica: los ejemplos están basados en datos reales y pueden ser replicados paso a paso.
-
 - 🤝 Inclusión y equidad: dirigido a públicos diversos, con énfasis en el contexto de América Latina y el acceso a datos locales.
-
 - 🌐 Colaboración abierta: el código y los notebooks pueden ser adaptados, reutilizados o ampliados por la comunidad.
 
 
