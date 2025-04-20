@@ -20,9 +20,11 @@ project:
     - file: notebooks/how-to-cite.md
     - title: Introducción a la programación científica con Python
       children:
-        - file: notebooks/1.fundamentos/1.1Fundamentos-python.ipynb
-        - file: notebooks/1.fundamentos/1.2Numpy-Pandas-Xarray.ipynb
-        - file: notebooks/1.fundamentos/1.3PyArt-Xradar-Wradlib.ipynb
+        - file: notebooks/1.fundamentos/1.1.Fundamentos-python.ipynb
+        - file: notebooks/1.fundamentos/1.2.Introduccion-Numpy.ipynb
+        - file: notebooks/1.fundamentos/1.3.Introduccion-Pandas.ipynb
+        - file: notebooks/1.fundamentos/1.4.Introduccion-Xarray.ipynb
+        - file: notebooks/1.fundamentos/1.5.Introduccion-Radar.ipynb
     - title: Acceso a datos hidrometeorológicos
       children:
         - file: notebooks/2.acceso-datos/2.1.Estaciones.ipynb
