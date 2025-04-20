@@ -1,7 +1,6 @@
-name: publish-book
+name: build-and-deploy-myst-book
 
 on:
-  # Trigger the workflow on push to main branch
   push:
     branches:
       - main
@@ -9,11 +8,36 @@ on:
 
 jobs:
   build:
-    uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
-    with:
-      environment_name: atmoscol2023
-      environment_file: environment.yml
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install mystmd
+
+      - name: Build MyST book
+        run: myst build
+
+      - name: Upload built site
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./_build/html
 
   deploy:
     needs: build
-    uses: ProjectPythia/cookbook-actions/.github/workflows/deploy-book.yaml@main
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2

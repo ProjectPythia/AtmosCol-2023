@@ -3,15 +3,39 @@ name: nightly-build
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *" # Daily “At 00:00”
+    - cron: "0 0 * * *"
 
 jobs:
   build:
     if: ${{ github.repository_owner == 'aladinor' }}
-    uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
-    with:
-      environment_name: cookbook-dev
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install mystmd
+        run: pip install mystmd
+
+      - name: Build MyST book
+        run: myst build
 
   link-check:
     if: ${{ github.repository_owner == 'aladinor' }}
-    uses: ProjectPythia/cookbook-actions/.github/workflows/link-checker.yaml@main
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install link checker
+        run: pip install markdown-link-check
+
+      - name: Run link checker
+        run: |
+          find . -name "*.md" -exec markdown-link-check {} \;
