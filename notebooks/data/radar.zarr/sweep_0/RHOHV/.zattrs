@@ -1,0 +1,10 @@
+{
+  "standard_name": "radar_correlation_coefficient_hv",
+  "units": "unitless",
+  "long_name": "Correlation coefficient HV",
+  "coordinates": "elevation azimuth range latitude longitude altitude time",
+  "_ARRAY_DIMENSIONS": [
+    "azimuth",
+    "range"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "standard_name": "time",
+  "units": "seconds since 2022-08-09T19:15:04.891000+00:00",
+  "calendar": "proleptic_gregorian",
+  "_ARRAY_DIMENSIONS": [
+    "azimuth"
+  ]
+}

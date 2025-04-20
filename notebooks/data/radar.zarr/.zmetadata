@@ -1,0 +1,1264 @@
+{
+  "metadata": {
+    ".zgroup": {
+      "zarr_format": 2
+    },
+    ".zattrs": {
+      "Conventions": "None",
+      "instrument_name": "carimagua-radar",
+      "version": "None",
+      "title": "None",
+      "institution": "None",
+      "references": "None",
+      "source": "Sigmet",
+      "history": "None",
+      "comment": "Primera tarea del modo precipitacion / 0.5",
+      "scan_name": "SURVP       "
+    },
+    "altitude/.zattrs": {
+      "long_name": "altitude",
+      "units": "meters",
+      "standard_name": "altitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "altitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "georeferencing_correction/.zattrs": {
+      "coordinates": "altitude latitude longitude"
+    },
+    "georeferencing_correction/.zgroup": {
+      "zarr_format": 2,
+      "consolidated_metadata": {
+        "metadata": {},
+        "must_understand": false,
+        "kind": "inline"
+      }
+    },
+    "georeferencing_correction/altitude/.zattrs": {
+      "long_name": "altitude",
+      "units": "meters",
+      "standard_name": "altitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "georeferencing_correction/altitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "georeferencing_correction/longitude/.zattrs": {
+      "long_name": "longitude",
+      "units": "degrees_east",
+      "standard_name": "longitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "georeferencing_correction/longitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "georeferencing_correction/latitude/.zattrs": {
+      "long_name": "latitude",
+      "units": "degrees_north",
+      "positive": "up",
+      "standard_name": "latitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "georeferencing_correction/latitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "latitude/.zattrs": {
+      "long_name": "latitude",
+      "units": "degrees_north",
+      "positive": "up",
+      "standard_name": "latitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "latitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "instrument_type/.zattrs": {
+      "_ARRAY_DIMENSIONS": []
+    },
+    "instrument_type/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": [
+        {
+          "id": "vlen-utf8"
+        }
+      ],
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<U5"
+    },
+    "platform_type/.zattrs": {
+      "_ARRAY_DIMENSIONS": []
+    },
+    "platform_type/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": [
+        {
+          "id": "vlen-utf8"
+        }
+      ],
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<U5"
+    },
+    "longitude/.zattrs": {
+      "long_name": "longitude",
+      "units": "degrees_east",
+      "standard_name": "longitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "longitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "radar_calibration/.zattrs": {},
+    "radar_calibration/.zgroup": {
+      "zarr_format": 2,
+      "consolidated_metadata": {
+        "metadata": {},
+        "must_understand": false,
+        "kind": "inline"
+      }
+    },
+    "radar_parameters/.zattrs": {
+      "coordinates": "altitude latitude longitude"
+    },
+    "radar_parameters/.zgroup": {
+      "zarr_format": 2,
+      "consolidated_metadata": {
+        "metadata": {},
+        "must_understand": false,
+        "kind": "inline"
+      }
+    },
+    "radar_parameters/altitude/.zattrs": {
+      "long_name": "altitude",
+      "units": "meters",
+      "standard_name": "altitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "radar_parameters/altitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "radar_parameters/latitude/.zattrs": {
+      "long_name": "latitude",
+      "units": "degrees_north",
+      "positive": "up",
+      "standard_name": "latitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "radar_parameters/latitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "radar_parameters/longitude/.zattrs": {
+      "long_name": "longitude",
+      "units": "degrees_east",
+      "standard_name": "longitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "radar_parameters/longitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "sweep_group_name/.zattrs": {
+      "_ARRAY_DIMENSIONS": [
+        "sweep"
+      ]
+    },
+    "sweep_group_name/.zarray": {
+      "shape": [
+        1
+      ],
+      "chunks": [
+        1
+      ],
+      "fill_value": null,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<i8"
+    },
+    "sweep_fixed_angle/.zattrs": {
+      "_ARRAY_DIMENSIONS": [
+        "sweep"
+      ]
+    },
+    "sweep_fixed_angle/.zarray": {
+      "shape": [
+        1
+      ],
+      "chunks": [
+        1
+      ],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "sweep_0/.zattrs": {
+      "coordinates": "x y z"
+    },
+    "sweep_0/.zgroup": {
+      "zarr_format": 2,
+      "consolidated_metadata": {
+        "metadata": {},
+        "must_understand": false,
+        "kind": "inline"
+      }
+    },
+    "sweep_0/crs_wkt/.zattrs": {
+      "crs_wkt": "PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"World Geodetic System 1984\",ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ID[\"EPSG\",6326]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]]],CONVERSION[\"unknown\",METHOD[\"Azimuthal Equidistant\",ID[\"EPSG\",1125]],PARAMETER[\"Latitude of natural origin\",4.56366011872888,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-71.3327398896217,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+      "semi_major_axis": 6378137.0,
+      "semi_minor_axis": 6356752.314245179,
+      "inverse_flattening": 298.257223563,
+      "reference_ellipsoid_name": "WGS 84",
+      "longitude_of_prime_meridian": 0.0,
+      "prime_meridian_name": "Greenwich",
+      "geographic_crs_name": "unknown",
+      "horizontal_datum_name": "World Geodetic System 1984",
+      "projected_crs_name": "unknown",
+      "grid_mapping_name": "azimuthal_equidistant",
+      "latitude_of_projection_origin": 4.56366011872888,
+      "longitude_of_projection_origin": -71.3327398896217,
+      "false_easting": 0.0,
+      "false_northing": 0.0,
+      "_ARRAY_DIMENSIONS": []
+    },
+    "sweep_0/crs_wkt/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<i8"
+    },
+    "sweep_0/altitude/.zattrs": {
+      "long_name": "altitude",
+      "units": "meters",
+      "standard_name": "altitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "sweep_0/altitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "sweep_0/azimuth/.zattrs": {
+      "standard_name": "ray_azimuth_angle",
+      "long_name": "azimuth_angle_from_true_north",
+      "units": "degrees",
+      "axis": "radial_azimuth_coordinate",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth"
+      ]
+    },
+    "sweep_0/azimuth/.zarray": {
+      "shape": [
+        720
+      ],
+      "chunks": [
+        720
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/DBZH/.zattrs": {
+      "standard_name": "radar_equivalent_reflectivity_factor_h",
+      "units": "dBZ",
+      "long_name": "Equivalent reflectivity factor H",
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/DBZH/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/DB_DBZE8/.zattrs": {
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/DB_DBZE8/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/DBTH/.zattrs": {
+      "standard_name": "radar_equivalent_reflectivity_factor_h",
+      "units": "dBZ",
+      "long_name": "Total power H (uncorrected reflectivity)",
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/DBTH/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/DB_DBTE8/.zattrs": {
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/DB_DBTE8/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/elevation/.zattrs": {
+      "standard_name": "ray_elevation_angle",
+      "long_name": "elevation_angle_from_horizontal_plane",
+      "units": "degrees",
+      "axis": "radial_elevation_coordinate",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth"
+      ]
+    },
+    "sweep_0/elevation/.zarray": {
+      "shape": [
+        720
+      ],
+      "chunks": [
+        720
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/DB_HCLASS/.zattrs": {
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/DB_HCLASS/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        360,
+        497
+      ],
+      "fill_value": null,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<i2"
+    },
+    "sweep_0/follow_mode/.zattrs": {
+      "coordinates": "altitude crs_wkt latitude longitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "sweep_0/follow_mode/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": [
+        {
+          "id": "vlen-utf8"
+        }
+      ],
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<U7"
+    },
+    "sweep_0/prt_mode/.zattrs": {
+      "coordinates": "altitude crs_wkt latitude longitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "sweep_0/prt_mode/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": [
+        {
+          "id": "vlen-utf8"
+        }
+      ],
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<U7"
+    },
+    "sweep_0/KDP/.zattrs": {
+      "standard_name": "radar_specific_differential_phase_hv",
+      "units": "degrees per kilometer",
+      "long_name": "Specific differential phase HV",
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/KDP/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/longitude/.zattrs": {
+      "long_name": "longitude",
+      "units": "degrees_east",
+      "standard_name": "longitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "sweep_0/longitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "sweep_0/latitude/.zattrs": {
+      "long_name": "latitude",
+      "units": "degrees_north",
+      "positive": "up",
+      "standard_name": "latitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "sweep_0/latitude/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "sweep_0/range/.zattrs": {
+      "units": "meters",
+      "standard_name": "projection_range_coordinate",
+      "long_name": "range_to_measurement_volume",
+      "axis": "radial_range_coordinate",
+      "meters_between_gates": 15000.0,
+      "spacing_is_constant": "true",
+      "meters_to_center_of_first_gate": 100000,
+      "_ARRAY_DIMENSIONS": [
+        "range"
+      ]
+    },
+    "sweep_0/range/.zarray": {
+      "shape": [
+        994
+      ],
+      "chunks": [
+        994
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/PHIDP/.zattrs": {
+      "standard_name": "radar_differential_phase_hv",
+      "units": "degrees",
+      "long_name": "Differential phase HV",
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/PHIDP/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/RHOHV/.zattrs": {
+      "standard_name": "radar_correlation_coefficient_hv",
+      "units": "unitless",
+      "long_name": "Correlation coefficient HV",
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/RHOHV/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/sweep_fixed_angle/.zattrs": {
+      "coordinates": "altitude crs_wkt latitude longitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "sweep_0/sweep_fixed_angle/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "sweep_0/SQIH/.zattrs": {
+      "standard_name": "signal_quality_index_h",
+      "units": "unitless",
+      "long_name": "Signal Quality H",
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/SQIH/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/sweep_mode/.zattrs": {
+      "coordinates": "altitude crs_wkt latitude longitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "sweep_0/sweep_mode/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": [
+        {
+          "id": "vlen-utf8"
+        }
+      ],
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<U20"
+    },
+    "sweep_0/sweep_number/.zattrs": {
+      "coordinates": "altitude crs_wkt latitude longitude",
+      "_ARRAY_DIMENSIONS": []
+    },
+    "sweep_0/sweep_number/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<i8"
+    },
+    "sweep_0/time/.zattrs": {
+      "standard_name": "time",
+      "units": "seconds since 2022-08-09T19:15:04.891000+00:00",
+      "calendar": "proleptic_gregorian",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth"
+      ]
+    },
+    "sweep_0/time/.zarray": {
+      "shape": [
+        720
+      ],
+      "chunks": [
+        720
+      ],
+      "fill_value": null,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<u2"
+    },
+    "sweep_0/x/.zattrs": {
+      "standard_name": "east_west_distance_from_radar",
+      "units": "meters",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/x/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        249
+      ],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "sweep_0/WRADH/.zattrs": {
+      "standard_name": "radar_doppler_spectrum_width_h",
+      "units": "meters per seconds",
+      "long_name": "Doppler spectrum width H",
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/WRADH/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/VRADH/.zattrs": {
+      "standard_name": "radial_velocity_of_scatterers_away_from_instrument_h",
+      "units": "meters per seconds",
+      "long_name": "Radial velocity of scatterers away from instrument H",
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/VRADH/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "sweep_0/z/.zattrs": {
+      "standard_name": "height_above_ground",
+      "units": "meters",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/z/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        249
+      ],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "sweep_0/y/.zattrs": {
+      "standard_name": "north_south_distance_from_radar",
+      "units": "meters",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/y/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        249
+      ],
+      "fill_value": NaN,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f8"
+    },
+    "sweep_0/ZDR/.zattrs": {
+      "standard_name": "radar_differential_reflectivity_hv",
+      "units": "dB",
+      "long_name": "Log differential reflectivity H/V",
+      "coordinates": "elevation azimuth range latitude longitude altitude time",
+      "_ARRAY_DIMENSIONS": [
+        "azimuth",
+        "range"
+      ]
+    },
+    "sweep_0/ZDR/.zarray": {
+      "shape": [
+        720,
+        994
+      ],
+      "chunks": [
+        180,
+        497
+      ],
+      "fill_value": "NaN",
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<f4"
+    },
+    "time_coverage_end/.zattrs": {
+      "_ARRAY_DIMENSIONS": []
+    },
+    "time_coverage_end/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": [
+        {
+          "id": "vlen-utf8"
+        }
+      ],
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<U20"
+    },
+    "time_coverage_start/.zattrs": {
+      "_ARRAY_DIMENSIONS": []
+    },
+    "time_coverage_start/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": [
+        {
+          "id": "vlen-utf8"
+        }
+      ],
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<U20"
+    },
+    "volume_number/.zattrs": {
+      "_ARRAY_DIMENSIONS": []
+    },
+    "volume_number/.zarray": {
+      "shape": [],
+      "chunks": [],
+      "fill_value": null,
+      "order": "C",
+      "filters": null,
+      "dimension_separator": ".",
+      "compressor": {
+        "id": "blosc",
+        "cname": "lz4",
+        "clevel": 5,
+        "shuffle": 1,
+        "blocksize": 0
+      },
+      "zarr_format": 2,
+      "dtype": "<i8"
+    }
+  },
+  "zarr_consolidated_format": 1
+}

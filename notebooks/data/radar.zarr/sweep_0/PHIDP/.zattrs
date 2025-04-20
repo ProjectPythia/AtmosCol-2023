@@ -1,0 +1,10 @@
+{
+  "standard_name": "radar_differential_phase_hv",
+  "units": "degrees",
+  "long_name": "Differential phase HV",
+  "coordinates": "elevation azimuth range latitude longitude altitude time",
+  "_ARRAY_DIMENSIONS": [
+    "azimuth",
+    "range"
+  ]
+}
