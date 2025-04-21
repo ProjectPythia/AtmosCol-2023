@@ -4,20 +4,19 @@
 name: MyST GitHub Pages Deploy
 on:
   push:
-    # Runs on pushes targeting the default branch
     branches: [upgrade-myst]
+  schedule:
+    # Runs hourly as well
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
 env:
-  # `BASE_URL` determines the website is served from, including CSS & JS assets
-  # You may need to change this to `BASE_URL: ''`
   BASE_URL: /${{ github.event.repository.name }}
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: 'pages'
   cancel-in-progress: false
@@ -38,6 +37,18 @@ jobs:
         run: npm install -g mystmd
       - name: Build HTML Assets
         run: myst build --html
+      - name: Setup Conda Environment
+        uses: mamba-org/setup-micromamba@v2.0.4
+        with:
+          environment-file: environment.yml
+          init-shell: >-
+            bash
+          cache-downloads: true
+          post-cleanup: "all"
+          create-args: python=3.12
+      - name: Build HTML Assets
+        shell: bash -l {0}
+        run: myst build --html --execute
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
