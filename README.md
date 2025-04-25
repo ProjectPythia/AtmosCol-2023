@@ -85,7 +85,8 @@ Si estás interesado en ejecutar este material en tu computadora, sigue el sigui
    ```bash
    cd Atmoscol2023
    ```
-1. Crea y activa tu ambiente de desarrollo usando el archivo environment.yml:   ```bash
+1. Crea y activa tu ambiente de desarrollo usando el archivo environment.yml:
+   ```bash
    conda env create -f environment.yml
    conda activate cdh-python
    ```
