@@ -5,11 +5,8 @@ channels:
 dependencies:
   - python>=3.12
   - jupyterlab
-  - jupyter_server
   - mystmd
   - ipywidgets
-
-  # Core scientific stack
   - numpy
   - pandas
   - xarray
@@ -24,24 +21,17 @@ dependencies:
   - hvplot
   - datashader
   - folium
+  - obstore
   - ffmpeg
-
-  # Radar & weather
   - xradar
   - cmweather
   - siphon
-
-  # Cloud and intake
   - gcsfs
   - boto3
+  - s3fs
   - intake-esm
-
-  # Visualization / video
   - xmovie
-
-  # Excel and misc
   - xlrd
-
   - pip
   - pip:
       - xmip
