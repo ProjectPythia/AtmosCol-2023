@@ -1,4 +1,7 @@
-<img src="chd_logo.png" alt="thumbnail" width="500"/>
+```{image} chd_logo.png
+:width: 400px
+:align: center
+```
 
 # Ciencia de Datos Hidrometeorológicos con Python
 
