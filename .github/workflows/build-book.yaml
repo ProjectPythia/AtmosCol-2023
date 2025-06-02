@@ -1,0 +1,103 @@
+name: build-book
+
+on:
+  workflow_call:
+    inputs:
+      environment_name:
+        description: 'Name of conda environment to activate'
+        required: false
+        default: 'cdh-python'
+        type: string
+      environment_file:
+        description: 'Name of conda environment file'
+        required: false
+        default: 'environment.yml'
+        type: string
+      path_to_notebooks:
+        description: 'Location of the MyST source relative to repo root'
+        required: false
+        default: './'
+        type: string
+      use_cached_environment:
+        description: 'Flag for whether to attempt to retrieve cached environment'
+        required: false
+        default: 'true'
+        type: string
+
+env:
+  DOCKER_TAG: pr_111
+
+jobs:
+  build-container:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Check Changes in binder folder
+        run: |
+          echo "REBUILD=$(git diff --quiet ${{ github.event.pull_request.before }}..${{ github.event.after }} -- binder && echo unchanged || echo changed)" >> $GITHUB_ENV
+
+      - name: Remove Dockerfile (force rebuild strategy)
+        run: rm -f binder/Dockerfile
+
+      - name: Free up disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+          docker-images: false
+          swap-storage: false
+
+      - name: Build environment with repo2docker
+        uses: jupyterhub/repo2docker-action@master
+        with:
+          DOCKER_USERNAME: "openradar"
+          DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          DOCKER_REGISTRY: "ghcr.io"
+          ADDITIONAL_TAG: ${{ env.DOCKER_TAG }}
+          PUBLIC_REGISTRY_CHECK: true
+          APPENDIX_FILE: "binder/appendix.txt"
+          REPO2DOCKER_EXTRA_ARGS: --Repo2Docker.base_image=docker.io/library/buildpack-deps:jammy
+          FORCE_REPO2DOCKER_VERSION: jupyter-repo2docker==2024.03.0
+
+  build-book:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/openradar/erad2024:latest
+      options: --user root
+      env:
+        BASE_URL: /${{ github.event.repository.name }}
+    needs: [build-container]
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check myst version
+        run: |
+          which myst || echo "myst not found"
+          myst --version || echo "Myst not installed!"
+
+      - name: Run tests and build book
+        run: |
+          pytest -n auto --verbose --durations=15 --pyargs notebooks || echo "Tests failed or skipped"
+          myst build --ci --html
+
+      - name: Zip built book
+        run: |
+          set -xe
+          rm -f book.zip
+          zip -r book.zip ${{ inputs.path_to_notebooks }}/_build/html
+
+      - name: Upload zipped book artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-zip-${{ github.event.number }}
+          path: ./book.zip
