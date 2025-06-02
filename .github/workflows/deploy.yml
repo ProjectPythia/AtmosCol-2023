@@ -4,7 +4,7 @@
 name: MyST GitHub Pages Deploy
 on:
   push:
-    branches: [upgrade-myst, main]
+    branches: [main]
   schedule:
     # Runs hourly as well
     - cron: '0 * * * *'
