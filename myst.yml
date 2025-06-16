@@ -35,6 +35,10 @@ project:
       file: notebooks/3.ENSO/3.1ENSO.ipynb
     - title: Cambio Climático
       file: notebooks/4.cambio-climatico/4.1Global-Mean-SST.ipynb
+  jupyter:
+    binder:
+      url: https://binder.projectpythia.org/
+      repo: ProjectPythia/AtmosCol-2023
 
 site:
   template: book-theme
