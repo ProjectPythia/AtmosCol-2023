@@ -1,0 +1,10 @@
+{
+  "standard_name": "radial_velocity_of_scatterers_away_from_instrument_h",
+  "units": "meters per seconds",
+  "long_name": "Radial velocity of scatterers away from instrument H",
+  "coordinates": "elevation azimuth range latitude longitude altitude time",
+  "_ARRAY_DIMENSIONS": [
+    "azimuth",
+    "range"
+  ]
+}

@@ -1,90 +1,97 @@
-<img src="atmoscol.jpg" alt="thumbnail" width="800"/>
+```{image} chd_logo.png
+:width: 400px
+:align: center
+```
 
-# Taller de datos científicos con Python y R - AtmosCol 2023
+# Ciencia de Datos Hidrometeorológicos con Python
 
-[![nightly-build](https://github.com/aladinor/Atmoscol2023/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/aladinor/Atmoscol2023/actions/workflows/nightly-build.yaml)
-[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/cookbook-template/main?labpath=notebooks)
+[![nightly-build](https://github.com/ProjectPythia/AtmosCol-2023/actions/workflows/nightly-build.yaml/badge.svg)](https://github.com/ProjectPythia/AtmosCol-2023/actions/workflows/nightly-build.yaml)
+[![Binder](https://binder.projectpythia.org/badge_logo.svg)](https://binder.projectpythia.org/v2/gh/ProjectPythia/AtmosCol-2023/main?labpath=notebooks)
 [![DOI](https://zenodo.org/badge/686482876.svg)](https://zenodo.org/doi/10.5281/zenodo.8316796)
 
-## Motivación
+---
 
-Este taller de iniciación a la programación científica con Python y R - AtmosCol 2023 tiene como objetivo promover el paradigma emergente
-de investigación conocido como **'ciencia abierta'**. Este enfoque busca fomentar el acceso y la inclusión a los datos
-hidrometeorológicos de diversas fuentes, así como la reproducibilidad de los códigos, con el fin de impulsar el
-desarrollo colaborativo y la participación en actividades científicas en todos los niveles de la sociedad.
+Este libro interactivo forma parte del ecosistema de Pythia Cookbooks, y está orientado a la enseñanza, exploración y divulgación del análisis de datos hidrometeorológicos mediante Python.
 
-La ciencia abierta aboga por la **transparencia** y la **colaboración** en la investigación científica, fomentando la
-**disponibilidad** de datos científicos, la capacidad de **reproducir los resultados**, y la **inclusión** de diversos sectores
-de la **sociedad** en el proceso de investigación. Además, promueve la **comunicación efectiva** de los resultados científicos
-y la **divulgación del conocimiento** en beneficio de la comunidad en general.
+El contenido nace a partir del taller AtmosCol 2023, pero ha sido reorganizado como un recurso didáctico, abierto y reproducible que puede ser consultado y reutilizado por estudiantes, docentes, investigadores y cualquier persona interesada en los datos del clima y el ambiente.
 
-En el marco de este taller, se capacitará a los participantes en el uso de herramientas poderosas como `Python` y `R` para
-trabajar con datos hidrometeorológicos y llevar a cabo **análisis científicos**. De esta manera, se empoderará a los
-asistentes para contribuir de manera efectiva a la **investigación científica abierta**, lo que puede tener un impacto
-significativo en el avance de la ciencia y en la **toma de decisiones informadas en Colombia**.
+Este libro refleja los principios de la ciencia abierta, promoviendo:
 
-## Autores
+- 📖 Accesibilidad al conocimiento: todo el contenido es libre, interactivo y ejecutable en la nube o localmente.
+- 🧪 Reproducibilidad científica: los ejemplos están basados en datos reales y pueden ser replicados paso a paso.
+- 🤝 Inclusión y equidad: dirigido a públicos diversos, con énfasis en el contexto de América Latina y el acceso a datos locales.
+- 🌐 Colaboración abierta: el código y los notebooks pueden ser adaptados, reutilizados o ampliados por la comunidad.
 
-[Alfonso Ladino-Rincon](https://github.com/aladinor)
-[Nicole Rivera](https://github.com/nicolerivera1)
-[Max Grover](https://github.com/mgrover1)
 
-### Colaboradores
+---
 
-<a href="https://github.com/aladinor/Atmoscol2023/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=aladinor/Atmoscol2023" />
-</a>
+## 🎯 Objetivos
 
-## Estructura
+- Introducir al lector en el análisis de datos climáticos e hidrometeorológicos usando Python
+- Usar herramientas de código abierto como `xarray`, `pyart`, `pandas`, `cartopy`, `hvplot` y más
+- Acceder a datos reales de estaciones IDEAM, radares meteorológicos, GFS, OPENDAP y modelos CMIP
+- Aplicar conceptos de ciencia abierta y reproducibilidad
+- Analizar fenómenos como ENSO y visualizar escenarios de cambio climático
 
-El taller estará compuesto por dos sesiones. En la sesión de la mañana trabajeremos con `Python` y acceso a los datos hidrometeorológicos de diversas fuentes. En la sesión de la tarde trabajaremos anális de series de tiempo usando `R`.
+---
 
-### Sección 1. Acceso a los datos hidrometeorológicos usando Python
+## 📚 Estructura del libro
 
-|        Hora         |                                                          Contenido                                                           |                                   Tutor                                   |  Duración  |
-| :-----------------: | :--------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------: | :--------: |
-| 08:00 AM - 08:15 AM |            Apertura del curso. Arranque del Jupyter Lab, instalación de librerias y requerimientos para el taller            | Alfonso Ladino, Nicole Rivera, Nestor Bernal, Iván Arias, Maria F. Moreno | 15 minutos |
-| 08:15 AM - 09:00 AM |                                    Introducción a Numpy, Pandas, Xarray, Py-Art y Xradar                                     |                              Alfonso Ladino                               | 45 minutos |
-| 09:00 AM - 09:30 AM |            Acceso a los datos de estaciones IDEAM usando el portal de [datos abiertos](https://www.datos.gov.co/)            |                              Alfonso Ladino                               | 30 minutos |
-| 09:30 AM - 10:00 AM | Acceso a los datos de [radares meteorológicos](https://registry.opendata.aws/ideam-radares/) de IDEAM usando Xradar y Py-Art |                              Alfonso Ladino                               | 30 minutos |
-| 10:00 AM - 10:30 AM |                                                   Pausa para el refrigerio                                                   |                                                                           | 30 minutos |
-| 10:30 AM - 11:00 AM |                                   Acceso a los datos de NASA (OPENDAP) y los datos de CMIP                                   |                       Alfonso Ladino, Nicole Rivera                       | 30 minutos |
-| 11:00 AM - 11:30 PM |                                     Cálculo de la anomalia ENSO en el Pacífico Tropical                                      |                               Nicole Rivera                               | 30 minutos |
-| 11:30 AM - 12:00 PM |                                      Gráficas del IPCC - Escenarios de Cambio Climático                                      |                               Nicole Rivera                               | 30 minutos |
-| 12:00 PM - 01:30 PM |                                                           Almuerzo                                                           |                                                                           | 1.5 horas  |
+El contenido está organizado en capítulos temáticos, cada uno representado por notebooks interactivos:
 
-### Sección 2. Anális de series de tiempo usando R
+1. **Fundamentos**  
+   Introducción al ecosistema científico de Python, estructuras de datos, visualización, y herramientas para trabajar con datos multidimensionales.
 
-|        Hora         |                             Contenido                              |     Tutor     | Duración  |
-| :-----------------: | :----------------------------------------------------------------: | :-----------: | :-------: |
-| 01:30 PM - 03:00 PM | Homogenización de series de tiempo mensuales de precipitación en R | Néstor Bernal | 1.5 horas |
+2. **Aplicaciones regionales**  
+   Casos de estudio con datos hidrometeorológicos de Colombia: estaciones del IDEAM, radares meteorológicos, y uso de modelos globales (GFS).
 
-## Ejecutar los Notebooks
+3. **Fenómenos climáticos**  
+   Cálculo de anomalías relacionadas con el fenómeno ENSO en el Pacífico Tropical.
 
-Pueden ejecutar los `notebooks` bien sea usando [Binder](https://mybinder.org/) o localmente en sus maquinas.
+4. **Cambio climático**  
+   Visualización de datos de modelos climáticos globales (CMIP) y reproducción de gráficas del IPCC sobre aumento de temperatura.
 
-### Binder
+---
 
-La forma más sencilla de interactuar con un `Jupyter Notebook` es a través de [Binder](https://binder.projectpythia.org/), que permite la ejecución de un [Jupyter Book](https://jupyterbook.org) en la nube. Los detalles de cómo funciona `binder` no son muy relevantes por ahora. Todo lo que necesitamos saber es cómo iniciar un capítulo de Pythia Cookbooks a través de Binder. Simplemente navegue con el mouse hasta la esquina superior derecha del capítulo del libro que está viendo y haga clic en el ícono del cohete y asegúrese de seleccionar "iniciar Binder". Después de un momento, se te presentará un `Jupyter Lab` con el que podrás interactuar. Es decir. Podrás ejecutar e incluso cambiar los programas de ejemplo. Verás que las celdas de código no tienen salida al principio, hasta que las ejecutes presionando <kbd>Shift</kbd>+<kbd>Enter</kbd>. Los detalles completos sobre cómo interactuar con un cuaderno Jupyter activo se describen en [Introducción a Jupyter](https://foundations.projectpythia.org/foundations/getting-started-jupyter.html).
+## 🧑‍🏫 Público objetivo
 
-### Ejecutar de manera local
+- Estudiantes de pregrado o posgrado en ciencias ambientales, físicas o computacionales
+- Docentes y educadores que deseen introducir análisis de datos climáticos en sus cursos
+- Investigadores interesados en reproducibilidad y ciencia abierta
+- Profesionales de instituciones ambientales o meteorológicas en América Latina
 
-Si está interesado en ejecutar este material localmente en su computadora, deberá seguir este flujo de trabajo:
+---
 
-1. Clone el repositorio `https://github.com/aladinor/Atmoscol2023.git` usando el siguiente comando de consola:
+## 🚀 Cómo ejecutar los notebooks
+
+### 🔗 En Binder (recomendado)
+
+Haz clic en el ícono de Binder arriba o visita:
+
+👉 [Ejecutar en Binder](https://binder.projectpythia.org/v2/gh/ProjectPythia/AtmosCol-2023/main?labpath=notebooks)
+
+Esto abrirá una versión ejecutable del libro en la nube (Jupyter Lab).
+
+---
+
+### 🖥️ Ejecutar este libro localmente
+
+Si estás interesado en ejecutar este material en tu computadora, sigue el siguiente flujo de trabajo:
+
+1. Clona el repositorio desde GitHub:
 
    ```bash
-    git clone https://github.com/aladinor/Atmoscol2023.git
+    git clone https://github.com/ProjectPythia/AtmosCol-2023
    ```
 
-1. Entre en la carpeta de `Atmoscol2023`
+1. Entra en la carpeta del proyecto:
    ```bash
    cd Atmoscol2023
    ```
-1. Cree y active su ambiente de desarrollo usando el archivo `environment.yml`
+1. Crea y activa tu ambiente de desarrollo usando el archivo environment.yml:
    ```bash
    conda env create -f environment.yml
-   conda activate atmoscol2023
+   conda activate cdh-python
    ```
 1. Vaya a la carpeta `notebooks` y comience una sesión de `Jupyterlab`
    ```bash

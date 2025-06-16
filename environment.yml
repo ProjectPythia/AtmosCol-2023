@@ -1,45 +1,39 @@
-name: atmoscol2023
+name: cdh-python
 channels:
   - conda-forge
-  - pyviz
+  - nodefaults
 dependencies:
-  - python>=3.9
-  - jupyter-book
+  - python>=3.12
   - jupyterlab
-  - jupyter_server
-  - h5netcdf
-  - h5py
-  - netCDF4
-  - xarray
-  - cf_xarray
-  - xarray-datatree>=0.0.10
-  - xarrayutils
-  - zarr
-  - gcsfs
+  - mystmd
+  - ipywidgets
+  - numpy
   - pandas
+  - xarray
+  - zarr
+  - h5py
+  - h5netcdf
+  - netCDF4
   - dask
-  - arm_pyart
+  - scipy
   - matplotlib
   - cartopy
   - hvplot
-  - scipy
-  - intake-esm
-  - xmovie
+  - datashader
+  - folium
+  - obstore
   - ffmpeg
   - xradar
-  - xlrd
-  - folium
-  - boto3
-  - datashader
-  - ipywidgets
-  - pythia-datasets
-  - wradlib
   - cmweather
   - siphon
+  - gcsfs
+  - boto3
+  - s3fs
+  - intake-esm
+  - xmovie
+  - xlrd
   - pip
   - pip:
-      - sphinx-pythia-theme
-      - pydata-sphinx-theme
       - xmip
       - sodapy
       - pydap

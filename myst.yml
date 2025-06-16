@@ -1,0 +1,52 @@
+version: 1
+
+project:
+  title: Ciencia de Datos Hidrometeorológicos con Python
+  description: Un libro interactivo enfocado en programación científica con Python para datos climáticos.
+  keywords: [Python, clima, hidrometeorología, ciencia abierta, Pythia, ENSO, cambio climático, Radar]
+  authors:
+    - name: Alfonso Ladino-Rincon
+      orcid: 0000-0001-8081-7827
+      github: aladinor
+    - name: Nicole Rivera
+      orcid: 0000-0001-8318-1983
+      github: nicolerivera1
+    - name: Max Grover
+      orcid: 0000-0002-0370-8974
+      github: mgrover1
+  github: https://github.com/ProjectPythia/AtmosCol-2023
+  toc:
+    - file: README.md
+    - file: notebooks/how-to-cite.md
+    - title: Introducción a la programación científica con Python
+      children:
+        - file: notebooks/1.fundamentos/1.0.Introduccion-JupyterLab.ipynb
+        - file: notebooks/1.fundamentos/1.1.Fundamentos-python.ipynb
+        - file: notebooks/1.fundamentos/1.2.Introduccion-Numpy.ipynb
+        - file: notebooks/1.fundamentos/1.3.Introduccion-Pandas.ipynb
+        - file: notebooks/1.fundamentos/1.4.Introduccion-Xarray.ipynb
+        - file: notebooks/1.fundamentos/1.5.Introduccion-Radar.ipynb
+    - title: Acceso a datos hidrometeorológicos
+      children:
+        - file: notebooks/2.acceso-datos/2.1.Estaciones.ipynb
+        - file: notebooks/2.acceso-datos/2.2.Radares.ipynb
+        - file: notebooks/2.acceso-datos/2.3.GFS.ipynb
+    - title: ENOS
+      file: notebooks/3.ENSO/3.1ENSO.ipynb
+    - title: Cambio Climático
+      file: notebooks/4.cambio-climatico/4.1Global-Mean-SST.ipynb
+
+site:
+  template: book-theme
+  options:
+    # Si tienes un logo, colócalo aquí:
+    # logo: notebooks/images/logos/pythia_logo-white-rtext.svg
+    # footer_logos:
+    #   Pythia: notebooks/images/logos/pythia_logo-white-notext.svg
+    toc_title: Contenido
+  nav:
+    - title: Página principal
+      url: https://github.com/ProjectPythia/AtmosCol-2023
+  actions:
+    - title: Ejecutar en Binder
+      url: https://binder.projectpythia.org/v2/gh/ProjectPythia/AtmosCol-2023/main?labpath=notebooks

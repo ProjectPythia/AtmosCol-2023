@@ -1,0 +1,58 @@
+# This file was created automatically with `myst init --gh-pages` 🪄 💚
+# Ensure your GitHub Pages settings for this repository are set to deploy with **GitHub Actions**.
+
+name: MyST GitHub Pages Deploy
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Runs hourly as well
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - name: Install MyST Markdown
+        run: npm install -g mystmd
+      - name: Build HTML Assets
+        run: myst build --html
+      - name: Setup Conda Environment
+        uses: mamba-org/setup-micromamba@v2.0.4
+        with:
+          environment-file: environment.yml
+          init-shell: >-
+            bash
+          cache-downloads: true
+          post-cleanup: "all"
+          create-args: python=3.12
+      - name: Build HTML Assets
+        shell: bash -l {0}
+        run: myst build --html --execute
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_build/html'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
