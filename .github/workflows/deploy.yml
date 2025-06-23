@@ -35,8 +35,6 @@ jobs:
           node-version: 18.x
       - name: Install MyST Markdown
         run: npm install -g mystmd
-      - name: Build HTML Assets
-        run: myst build --html
       - name: Setup Conda Environment
         uses: mamba-org/setup-micromamba@v2.0.4
         with:
