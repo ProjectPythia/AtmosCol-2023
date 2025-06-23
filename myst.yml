@@ -28,9 +28,9 @@ project:
         - file: notebooks/1.fundamentos/1.5.Introduccion-Radar.ipynb
     - title: Acceso a datos hidrometeorológicos
       children:
-     #   - file: notebooks/2.acceso-datos/2.1.Estaciones.ipynb
+        - file: notebooks/2.acceso-datos/2.1.Estaciones.ipynb
         - file: notebooks/2.acceso-datos/2.2.Radares.ipynb
-        - file: notebooks/2.acceso-datos/2.3.GFS.ipynb
+     #   - file: notebooks/2.acceso-datos/2.3.GFS.ipynb
     - title: Aplicaciones científicas
       children:
         - file: notebooks/3.Aplicaciones/3.1.ENSO.ipynb
