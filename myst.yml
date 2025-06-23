@@ -34,7 +34,7 @@ project:
     - title: Aplicaciones científicas
       children:
         - file: notebooks/3.Aplicaciones/3.1.ENSO.ipynb
-        - file: notebooks/3.Aplicaciones/3.2.Global-Mean-SST.ipynb
+#        - file: notebooks/3.Aplicaciones/3.2.Global-Mean-SST.ipynb
         - file: notebooks/3.Aplicaciones/3.3.ERA5.ipynb
         - file: notebooks/3.Aplicaciones/3.4.QVPs.ipynb
         - file: notebooks/3.Aplicaciones/3.5.QPE.ipynb
@@ -42,10 +42,6 @@ project:
     binder:
       url: https://binder.projectpythia.org/
       repo: ProjectPythia/AtmosCol-2023
-
-execute:
-  exclude_notebooks:
-    - notebooks/1.fundamentos/1.4.Introduccion-Xarray.ipynb
 
 site:
   template: book-theme
