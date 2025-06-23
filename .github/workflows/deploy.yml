@@ -60,9 +60,9 @@ jobs:
             _build/.jupyter_cache
           key: myst-cache-${{ hashFiles('**/*.ipynb') }}
 
-      - name: Build HTML Assets
+      - name: Build HTML Assets (no notebook execution)
         shell: bash -l {0}
-        run: myst build --html
+        run: myst build --html --no-execute
 
       - name: Save MyST execution cache
         uses: actions/cache/save@v4
