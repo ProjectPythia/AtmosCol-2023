@@ -10,6 +10,7 @@ on:
 jobs:
   build:
     uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
+    timeout-minutes: 60
 
   deploy:
     needs: build
