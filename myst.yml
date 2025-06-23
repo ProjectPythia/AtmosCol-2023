@@ -30,7 +30,7 @@ project:
       children:
         - file: notebooks/2.acceso-datos/2.1.Estaciones.ipynb
         - file: notebooks/2.acceso-datos/2.2.Radares.ipynb
-        - file: notebooks/2.acceso-datos/2.3.GFS.ipynb
+        # - file: notebooks/2.acceso-datos/2.3.GFS.ipynb
     - title: ENOS
       file: notebooks/3.ENSO/3.1ENSO.ipynb
     - title: Cambio Climático
