@@ -43,6 +43,10 @@ project:
       url: https://binder.projectpythia.org/
       repo: ProjectPythia/AtmosCol-2023
 
+execute:
+  exclude_notebooks:
+    - notebooks/1.fundamentos/1.4.Introduccion-Xarray.ipynb
+
 site:
   template: book-theme
   options:
