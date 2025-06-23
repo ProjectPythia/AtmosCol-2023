@@ -11,6 +11,8 @@ jobs:
   build:
     uses: ProjectPythia/cookbook-actions/.github/workflows/build-book.yaml@main
     timeout-minutes: 60
+    with:
+      build_command: myst build --html
 
   deploy:
     needs: build
