@@ -31,10 +31,13 @@ project:
         - file: notebooks/2.acceso-datos/2.1.Estaciones.ipynb
         - file: notebooks/2.acceso-datos/2.2.Radares.ipynb
         - file: notebooks/2.acceso-datos/2.3.GFS.ipynb
-    - title: ENOS
-      file: notebooks/3.ENSO/3.1ENSO.ipynb
-    - title: Cambio Climático
-      file: notebooks/4.cambio-climatico/4.1Global-Mean-SST.ipynb
+    - title: Aplicaciones científicas
+      children:
+        - file: notebooks/3.Aplicaciones/3.1.ENSO.ipynb
+        - file: notebooks/3.Aplicaciones/3.2.Global-Mean-SST.ipynb
+        - file: notebooks/3.Aplicaciones/3.3.ERA5.ipynb
+        - file: notebooks/3.Aplicaciones/3.4.QVPs.ipynb
+        - file: notebooks/3.Aplicaciones/3.5.QPE.ipynb
   jupyter:
     binder:
       url: https://binder.projectpythia.org/
@@ -43,10 +46,6 @@ project:
 site:
   template: book-theme
   options:
-    # Si tienes un logo, colócalo aquí:
-    # logo: notebooks/images/logos/pythia_logo-white-rtext.svg
-    # footer_logos:
-    #   Pythia: notebooks/images/logos/pythia_logo-white-notext.svg
     toc_title: Contenido
   nav:
     - title: Página principal
