@@ -1,5 +1,4 @@
-# This file was created automatically with `myst init --gh-pages` 🪄 💚
-# Ensure your GitHub Pages settings for this repository are set to deploy with **GitHub Actions**.
+# MyST GitHub Pages Deploy (no notebook execution)
 
 name: MyST GitHub Pages Deploy
 
@@ -28,6 +27,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -52,25 +52,14 @@ jobs:
           post-cleanup: "all"
           create-args: python=3.12
 
-      - name: Restore MyST execution cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .myst_cache
-            _build/.jupyter_cache
-          key: myst-cache-${{ hashFiles('**/*.ipynb') }}
+      - name: Disable notebook execution in myst.yml
+        run: |
+          echo "✅ Patching myst.yml to disable notebook execution"
+          sed -i '/jupyter:/a \ \ execute:\n\ \ \ \ execute_notebooks: \"off\"' myst.yml
 
-      - name: Build HTML Assets (no notebook execution)
+      - name: Build HTML Assets (no execution)
         shell: bash -l {0}
-        run: myst build --html --no-execute
-
-      - name: Save MyST execution cache
-        uses: actions/cache/save@v4
-        with:
-          path: |
-            .myst_cache
-            _build/.jupyter_cache
-          key: myst-cache-${{ hashFiles('**/*.ipynb') }}
+        run: myst build --html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
