@@ -30,11 +30,11 @@ project:
       children:
         - file: notebooks/2.acceso-datos/2.1.Estaciones.ipynb
         - file: notebooks/2.acceso-datos/2.2.Radares.ipynb
-        - file: notebooks/2.acceso-datos/2.3.GFS.ipynb
+     #   - file: notebooks/2.acceso-datos/2.3.GFS.ipynb
     - title: Aplicaciones científicas
       children:
         - file: notebooks/3.Aplicaciones/3.1.ENSO.ipynb
-        - file: notebooks/3.Aplicaciones/3.2.Global-Mean-SST.ipynb
+#        - file: notebooks/3.Aplicaciones/3.2.Global-Mean-SST.ipynb
         - file: notebooks/3.Aplicaciones/3.3.ERA5.ipynb
         - file: notebooks/3.Aplicaciones/3.4.QVPs.ipynb
         - file: notebooks/3.Aplicaciones/3.5.QPE.ipynb
@@ -53,3 +53,7 @@ site:
   actions:
     - title: Ejecutar en Binder
       url: https://binder.projectpythia.org/v2/gh/ProjectPythia/AtmosCol-2023/main?labpath=notebooks
+
+config:
+  execute:
+    execute_notebooks: "off"

@@ -1,9 +1,0 @@
-{
-  "standard_name": "ray_azimuth_angle",
-  "long_name": "azimuth_angle_from_true_north",
-  "units": "degrees",
-  "axis": "radial_azimuth_coordinate",
-  "_ARRAY_DIMENSIONS": [
-    "azimuth"
-  ]
-}

@@ -1,7 +1,0 @@
-{
-  "coordinates": "elevation azimuth range latitude longitude altitude time",
-  "_ARRAY_DIMENSIONS": [
-    "azimuth",
-    "range"
-  ]
-}

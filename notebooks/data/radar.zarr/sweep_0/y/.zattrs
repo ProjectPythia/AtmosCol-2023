@@ -1,8 +1,0 @@
-{
-  "standard_name": "north_south_distance_from_radar",
-  "units": "meters",
-  "_ARRAY_DIMENSIONS": [
-    "azimuth",
-    "range"
-  ]
-}
