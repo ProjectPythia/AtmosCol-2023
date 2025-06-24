@@ -44,7 +44,7 @@ jobs:
         run: npm install -g mystmd
 
       - name: Setup Conda Environment
-        uses: mamba-org/setup-micromamba@v2.0.4
+        uses: mamba-org/setup-micromamba@v2.0.5
         with:
           environment-file: environment.yml
           init-shell: bash
