@@ -4,7 +4,9 @@ name: MyST GitHub Pages Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
+  pull_request_target:
+      branches: [ main ]
   schedule:
     - cron: '0 * * * *'
   workflow_dispatch:
