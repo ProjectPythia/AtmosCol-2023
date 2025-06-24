@@ -1,7 +1,6 @@
 name: publish-book
 
 on:
-  # Trigger the workflow on push to main branch
   push:
     branches:
       - main
@@ -13,6 +12,10 @@ jobs:
     timeout-minutes: 60
     with:
       build_command: myst build --html
+      # Also include these to ensure control
+      path_to_notebooks: .
+      environment_file: environment.yml
+      base_url: /${{ github.event.repository.name }}
 
   deploy:
     needs: build

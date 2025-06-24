@@ -53,3 +53,6 @@ site:
   actions:
     - title: Ejecutar en Binder
       url: https://binder.projectpythia.org/v2/gh/ProjectPythia/AtmosCol-2023/main?labpath=notebooks
+
+jupyter_execute:
+  execute_notebooks: "off"
