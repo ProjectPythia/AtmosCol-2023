@@ -12,6 +12,10 @@ authors:
     website: https://github.com/nicolerivera1
     orcid: https://orcid.org/0000-0001-8318-1983
     affiliation: Universidad de Antioquia
+  - family-names: Ruales-Hernández
+    given-names: Leonardo
+    website: https://github.com/Leonardo0027
+    affiliation: Universidad Nacional de Colombia
   - name: "AtmosCol 2023" # use the 'name' field to acknowledge organizations
     website: "https://www.uniquindio.edu.co/atmoscol2023/"
 title: "Taller de datos científicos con Python y R - AtmosCol 2023"
