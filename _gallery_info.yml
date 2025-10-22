@@ -1,6 +1,12 @@
-thumbnail: thumbnail.png
+thumbnail: thumbnails/thumbnail.png
 tags:
   domains:
-    - sampledomain
+    - meteorology
+    - climate
+    - hydrology
   packages:
-    - samplepackage
+    - xarray
+    - pandas
+    - matplotlib
+    - cartopy
+    - xradar
