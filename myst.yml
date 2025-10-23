@@ -29,6 +29,7 @@ project:
         - file: notebooks/1.fundamentos/1.4.Introduccion-Xarray.ipynb
         - file: notebooks/1.fundamentos/1.5.Introduccion-Radar.ipynb
         - file: notebooks/1.fundamentos/1.6.Exploracion-NetCDF-GRIB.ipynb
+        - file: notebooks/1.fundamentos/1.7.Formatos-ARCO-Zarr.ipynb
     - title: Acceso a datos hidrometeorológicos
       children:
         - file: notebooks/2.acceso-datos/2.1.Estaciones.ipynb
