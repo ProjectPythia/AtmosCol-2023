@@ -197,7 +197,15 @@ When making significant changes, ensure compatibility with Project Pythia build 
 
 ## Custom Agents for Cookbook Development
 
-This project has specialized agents installed in `~/.claude/agents/` to assist with notebook development and quality assurance. These agents are available globally for use with this and other Pythia cookbooks.
+This project includes specialized agent definitions in `.claude/commands/` for notebook development and quality assurance. These agents help maintain Pythia Cookbook standards and ensure high-quality Spanish educational content.
+
+**Agent Definitions Location:**
+- **Source files**: `.claude/commands/*.md` (committed to repository)
+- **Active agents**: Installed in `~/.claude/agents/` (global, not tracked in git)
+
+**Why both locations?**
+- `.claude/commands/` - Version-controlled definitions for contributors to reference
+- `~/.claude/agents/` - Global installation for Claude Code to execute
 
 **Available Agents:**
 
