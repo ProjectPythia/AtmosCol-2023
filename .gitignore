@@ -56,3 +56,9 @@ ipython_config.py
 pip-log.txt
 pip-delete-this-directory.txt
 pip-wheel-metadata/
+
+# === Project planning (local only) ===
+plans/
+
+# === Claude Code configuration (local only) ===
+.claude/

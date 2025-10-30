@@ -9,8 +9,8 @@ dependencies:
   - ipywidgets
   - numpy
   - pandas
-  - xarray
-  - zarr>=3.0
+  - xarray>=2025.10.0
+  - zarr>=3.1
   - h5py
   - h5netcdf
   - netCDF4
@@ -22,7 +22,7 @@ dependencies:
   - datashader
   - obstore
   - ffmpeg
-  - xradar
+  - xradar>=0.10
   - cmweather
   - siphon
   - gcsfs
@@ -34,6 +34,8 @@ dependencies:
   - cmweather
   - pip
   - pip:
+      - icechunk==1.1.10
+      - arraylake==0.25
       - xmip
       - sodapy
       - pydap
