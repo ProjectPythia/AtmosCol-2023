@@ -9,8 +9,13 @@ dependencies:
   - ipywidgets
   - numpy
   - pandas
-  - xarray>=2025.10.0
-  - zarr>=3.1
+  - xarray>=2026.4.0
+  - zarr>=3.4
+  - icechunk>=2.1
+  - arraylake>=1.3
+  - xmip
+  - sodapy
+  - pydap
   - h5py
   - h5netcdf
   - netCDF4
@@ -22,7 +27,7 @@ dependencies:
   - datashader
   - obstore
   - ffmpeg
-  - xradar>=0.10
+  - xradar>=0.12
   - cmweather
   - siphon
   - gcsfs
@@ -31,12 +36,3 @@ dependencies:
   - intake-esm
   - xmovie
   - xlrd
-  - cmweather
-  - pip
-  - pip:
-      - icechunk==1.1.10
-      - arraylake==0.25
-      - xmip
-      - sodapy
-      - pydap
-      - git+https://github.com/aladinor/raw2zarr.git
