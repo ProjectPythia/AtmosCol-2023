@@ -28,42 +28,45 @@
 [32m   2212[39m [30;43m    [39;49m[30;43m*[39;49m[30;43m*[39;49m[30;43mkwargs[39;49m[30;43m,[39;49m
 [32m   2213[39m [30;43m[39;49m[30;43m)[39;49m
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/xarray/backends/writers.py:1004[39m, in [36m_datatree_to_zarr[39m[34m(dt, store, mode, encoding, synchronizer, group, write_inherited_coords, chunk_store, compute, consolidated, append_dim, region, safe_chunks, align_chunks, storage_options, zarr_version, zarr_format, write_empty_chunks, chunkmanager_store_kwargs)[39m
-[32m   1001[39m         dataset = node_store._validate_and_autodetect_region(dataset)
-[32m   1002[39m         node_store._validate_encoding(encoding)
-[32m-> [39m[32m1004[39m         [30;43mdump_to_store[39;49m[30;43m([39;49m
-[32m   1005[39m [30;43m            [39;49m[30;43mdataset[39;49m[30;43m,[39;49m
-[32m   1006[39m [30;43m            [39;49m[30;43mnode_store[39;49m[30;43m,[39;49m
-[32m   1007[39m [30;43m            [39;49m[30;43mwriter[39;49m[30;43m,[39;49m
-[32m   1008[39m [30;43m            [39;49m[30;43mencoding[39;49m[30;43m=[39;49m[30;43mencoding[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43mnode[39;49m[30;43m.[39;49m[30;43mpath[39;49m[30;43m)[39;49m[30;43m,[39;49m
-[32m   1009[39m [30;43m        [39;49m[30;43m)[39;49m
-[32m   1010[39m     writes = writer.sync(
-[32m   1011[39m         compute=compute, chunkmanager_store_kwargs=chunkmanager_store_kwargs
-[32m   1012[39m     )
-[32m   1013[39m [38;5;28;01mfinally[39;00m:
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/xarray/backends/writers.py:982[39m, in [36m_datatree_to_zarr[39m[34m(dt, store, mode, encoding, group, write_inherited_coords, compute, consolidated, append_dim, region, safe_chunks, align_chunks, storage_options, zarr_format, write_empty_chunks, chunkmanager_store_kwargs)[39m
+[32m    979[39m         dataset = node_store._validate_and_autodetect_region(dataset)
+[32m    980[39m         node_store._validate_encoding(encoding)
+[32m--> [39m[32m982[39m         [30;43mdump_to_store[39;49m[30;43m([39;49m
+[32m    983[39m [30;43m            [39;49m[30;43mdataset[39;49m[30;43m,[39;49m
+[32m    984[39m [30;43m            [39;49m[30;43mnode_store[39;49m[30;43m,[39;49m
+[32m    985[39m [30;43m            [39;49m[30;43mwriter[39;49m[30;43m,[39;49m
+[32m    986[39m [30;43m            [39;49m[30;43mencoding[39;49m[30;43m=[39;49m[30;43mencoding[39;49m[30;43m.[39;49m[30;43mget[39;49m[30;43m([39;49m[30;43mnode[39;49m[30;43m.[39;49m[30;43mpath[39;49m[30;43m)[39;49m[30;43m,[39;49m
+[32m    987[39m [30;43m        [39;49m[30;43m)[39;49m
+[32m    988[39m     writes = writer.sync(
+[32m    989[39m         compute=compute, chunkmanager_store_kwargs=chunkmanager_store_kwargs
+[32m    990[39m     )
+[32m    991[39m [38;5;28;01mfinally[39;00m:
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/xarray/backends/writers.py:491[39m, in [36mdump_to_store[39m[34m(dataset, store, writer, encoder, encoding, unlimited_dims)[39m
-[32m    488[39m [38;5;28;01mif[39;00m encoder:
-[32m    489[39m     variables, attrs = encoder(variables, attrs)
-[32m--> [39m[32m491[39m [30;43mstore[39;49m[30;43m.[39;49m[30;43mstore[39;49m[30;43m([39;49m[30;43mvariables[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mattrs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mcheck_encoding[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mwriter[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43munlimited_dims[39;49m[30;43m=[39;49m[30;43munlimited_dims[39;49m[30;43m)[39;49m
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/xarray/backends/writers.py:495[39m, in [36mdump_to_store[39m[34m(dataset, store, writer, encoder, encoding, unlimited_dims)[39m
+[32m    492[39m [38;5;28;01mif[39;00m encoder:
+[32m    493[39m     variables, attrs = encoder(variables, attrs)
+[32m--> [39m[32m495[39m [30;43mstore[39;49m[30;43m.[39;49m[30;43mstore[39;49m[30;43m([39;49m[30;43mvariables[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mattrs[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mcheck_encoding[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mwriter[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43munlimited_dims[39;49m[30;43m=[39;49m[30;43munlimited_dims[39;49m[30;43m)[39;49m
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/xarray/backends/zarr.py:1122[39m, in [36mZarrStore.store[39m[34m(self, variables, attributes, check_encoding_set, writer, unlimited_dims)[39m
-[32m   1119[39m [38;5;28;01melse[39;00m:
-[32m   1120[39m     variables_to_set = variables_encoded
-[32m-> [39m[32m1122[39m [30;43mself[39;49m[30;43m.[39;49m[30;43mset_variables[39;49m[30;43m([39;49m
-[32m   1123[39m [30;43m    [39;49m[30;43mvariables_to_set[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mcheck_encoding_set[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mwriter[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43munlimited_dims[39;49m[30;43m=[39;49m[30;43munlimited_dims[39;49m
-[32m   1124[39m [30;43m[39;49m[30;43m)[39;49m
-[32m   1125[39m [38;5;28;01mif[39;00m [38;5;28mself[39m._consolidate_on_close:
-[32m   1126[39m     kwargs = {}
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/xarray/backends/zarr.py:1154[39m, in [36mZarrStore.store[39m[34m(self, variables, attributes, check_encoding_set, writer, unlimited_dims)[39m
+[32m   1151[39m [38;5;28;01melse[39;00m:
+[32m   1152[39m     variables_to_set = variables_encoded
+[32m-> [39m[32m1154[39m [30;43mself[39;49m[30;43m.[39;49m[30;43mset_variables[39;49m[30;43m([39;49m
+[32m   1155[39m [30;43m    [39;49m[30;43mvariables_to_set[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mcheck_encoding_set[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mwriter[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43munlimited_dims[39;49m[30;43m=[39;49m[30;43munlimited_dims[39;49m
+[32m   1156[39m [30;43m[39;49m[30;43m)[39;49m
+[32m   1157[39m [38;5;28;01mif[39;00m [38;5;28mself[39m._consolidate_on_close:
+[32m   1158[39m     zarr.consolidate_metadata(
+[32m   1159[39m         [38;5;28mself[39m.zarr_group.store,
+[32m   1160[39m         zarr_format=[38;5;28mself[39m.zarr_group.metadata.zarr_format,
+[32m   1161[39m     )
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/xarray/backends/zarr.py:1357[39m, in [36mZarrStore.set_variables[39m[34m(self, variables, check_encoding_set, writer, unlimited_dims)[39m
-[32m   1346[39m     encoding[[33m"[39m[33moverwrite[39m[33m"[39m] = [38;5;28mself[39m._mode == [33m"[39m[33mw[39m[33m"[39m
-[32m   1348[39m     zarr_array = [38;5;28mself[39m._create_new_array(
-[32m   1349[39m         name=name,
-[32m   1350[39m         dtype=dtype,
-[32m   (...)[39m[32m   1354[39m         attrs=encoded_attrs,
-[32m   1355[39m     )
-[32m-> [39m[32m1357[39m [30;43mwriter[39;49m[30;43m.[39;49m[30;43madd[39;49m[30;43m([39;49m[30;43mv[39;49m[30;43m.[39;49m[30;43mdata[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mzarr_array[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mregion[39;49m[30;43m)[39;49m
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/xarray/backends/zarr.py:1384[39m, in [36mZarrStore.set_variables[39m[34m(self, variables, check_encoding_set, writer, unlimited_dims)[39m
+[32m   1373[39m     encoding[[33m"[39m[33moverwrite[39m[33m"[39m] = [38;5;28mself[39m._mode == [33m"[39m[33mw[39m[33m"[39m
+[32m   1375[39m     zarr_array = [38;5;28mself[39m._create_new_array(
+[32m   1376[39m         name=name,
+[32m   1377[39m         dtype=dtype,
+[32m   (...)[39m[32m   1381[39m         attrs=encoded_attrs,
+[32m   1382[39m     )
+[32m-> [39m[32m1384[39m [30;43mwriter[39;49m[30;43m.[39;49m[30;43madd[39;49m[30;43m([39;49m[30;43mv[39;49m[30;43m.[39;49m[30;43mdata[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mzarr_array[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mregion[39;49m[30;43m)[39;49m
 
 [36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/xarray/backends/common.py:405[39m, in [36mArrayWriter.add[39m[34m(self, source, target, region)[39m
 [32m    403[39m     [38;5;28mself[39m.regions.append(region)
