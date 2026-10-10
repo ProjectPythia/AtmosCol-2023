@@ -75,26 +75,26 @@
 [32m    406[39m [38;5;28;01melse[39;00m:
 [32m    407[39m     target[...] = source
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/array.py:2811[39m, in [36mArray.__setitem__[39m[34m(self, selection, value)[39m
-[32m   2809[39m     [38;5;28mself[39m.vindex[cast([33m"[39m[33mCoordinateSelection | MaskSelection[39m[33m"[39m, selection)] = value
-[32m   2810[39m [38;5;28;01melif[39;00m is_pure_orthogonal_indexing(pure_selection, [38;5;28mself[39m.ndim):
-[32m-> [39m[32m2811[39m     [30;43mself[39;49m[30;43m.[39;49m[30;43mset_orthogonal_selection[39;49m[30;43m([39;49m[30;43mpure_selection[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mvalue[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mfields[39;49m[30;43m=[39;49m[30;43mfields[39;49m[30;43m)[39;49m
-[32m   2812[39m [38;5;28;01melse[39;00m:
-[32m   2813[39m     [38;5;28mself[39m.set_basic_selection(cast([33m"[39m[33mBasicSelection[39m[33m"[39m, pure_selection), value, fields=fields)
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/array.py:2865[39m, in [36mArray.__setitem__[39m[34m(self, selection, value)[39m
+[32m   2863[39m     [38;5;28mself[39m.vindex[cast([33m"[39m[33mCoordinateSelection | MaskSelection[39m[33m"[39m, selection)] = value
+[32m   2864[39m [38;5;28;01melif[39;00m is_pure_orthogonal_indexing(pure_selection, [38;5;28mself[39m.ndim):
+[32m-> [39m[32m2865[39m     [30;43mself[39;49m[30;43m.[39;49m[30;43mset_orthogonal_selection[39;49m[30;43m([39;49m[30;43mpure_selection[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mvalue[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mfields[39;49m[30;43m=[39;49m[30;43mfields[39;49m[30;43m)[39;49m
+[32m   2866[39m [38;5;28;01melse[39;00m:
+[32m   2867[39m     [38;5;28mself[39m.set_basic_selection(cast([33m"[39m[33mBasicSelection[39m[33m"[39m, pure_selection), value, fields=fields)
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/array.py:3293[39m, in [36mArray.set_orthogonal_selection[39m[34m(self, selection, value, fields, prototype)[39m
-[32m   3291[39m     prototype = default_buffer_prototype()
-[32m   3292[39m indexer = OrthogonalIndexer(selection, [38;5;28mself[39m.shape, [38;5;28mself[39m._chunk_grid)
-[32m-> [39m[32m3293[39m [38;5;28;01mreturn[39;00m [30;43msync[39;49m[30;43m([39;49m
-[32m   3294[39m [30;43m    [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43masync_array[39;49m[30;43m.[39;49m[30;43m_set_selection[39;49m[30;43m([39;49m[30;43mindexer[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mvalue[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mfields[39;49m[30;43m=[39;49m[30;43mfields[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mprototype[39;49m[30;43m=[39;49m[30;43mprototype[39;49m[30;43m)[39;49m
-[32m   3295[39m [30;43m[39;49m[30;43m)[39;49m
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/array.py:3347[39m, in [36mArray.set_orthogonal_selection[39m[34m(self, selection, value, fields, prototype)[39m
+[32m   3345[39m     prototype = default_buffer_prototype()
+[32m   3346[39m indexer = OrthogonalIndexer(selection, [38;5;28mself[39m.shape, [38;5;28mself[39m._chunk_grid)
+[32m-> [39m[32m3347[39m [38;5;28;01mreturn[39;00m [30;43msync[39;49m[30;43m([39;49m
+[32m   3348[39m [30;43m    [39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43masync_array[39;49m[30;43m.[39;49m[30;43m_set_selection[39;49m[30;43m([39;49m[30;43mindexer[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mvalue[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mfields[39;49m[30;43m=[39;49m[30;43mfields[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mprototype[39;49m[30;43m=[39;49m[30;43mprototype[39;49m[30;43m)[39;49m
+[32m   3349[39m [30;43m[39;49m[30;43m)[39;49m
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/sync.py:156[39m, in [36msync[39m[34m(coro, loop, timeout)[39m
-[32m    153[39m return_result = [38;5;28mnext[39m([38;5;28miter[39m(finished)).result()
-[32m    155[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(return_result, [38;5;167;01mBaseException[39;00m):
-[32m--> [39m[32m156[39m     [38;5;28;01mraise[39;00m return_result
-[32m    157[39m [38;5;28;01melse[39;00m:
-[32m    158[39m     [38;5;28;01mreturn[39;00m return_result
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/sync.py:155[39m, in [36msync[39m[34m(coro, loop, timeout)[39m
+[32m    152[39m return_result = [38;5;28mnext[39m([38;5;28miter[39m(finished)).result()
+[32m    154[39m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(return_result, [38;5;167;01mBaseException[39;00m):
+[32m--> [39m[32m155[39m     [38;5;28;01mraise[39;00m return_result
+[32m    156[39m [38;5;28;01melse[39;00m:
+[32m    157[39m     [38;5;28;01mreturn[39;00m return_result
 
 [36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/sync.py:116[39m, in [36m_runner[39m[34m(coro)[39m
 [32m    111[39m [38;5;250m[39m[33;03m"""[39;00m
@@ -106,108 +106,107 @@
 [32m    117[39m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m ex:  [38;5;66;03m# noqa: BLE001 -- the caller re-raises the returned exception[39;00m
 [32m    118[39m     [38;5;28;01mreturn[39;00m ex
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/array.py:1624[39m, in [36mAsyncArray._set_selection[39m[34m(self, indexer, value, prototype, fields)[39m
-[32m   1616[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_set_selection[39m(
-[32m   1617[39m     [38;5;28mself[39m,
-[32m   1618[39m     indexer: Indexer,
-[32m   (...)[39m[32m   1622[39m     fields: Fields | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m,
-[32m   1623[39m ) -> [38;5;28;01mNone[39;00m:
-[32m-> [39m[32m1624[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m _set_selection(
-[32m   1625[39m         [38;5;28mself[39m.store_path,
-[32m   1626[39m         [38;5;28mself[39m.metadata,
-[32m   1627[39m         [38;5;28mself[39m.codec_pipeline,
-[32m   1628[39m         [38;5;28mself[39m.config,
-[32m   1629[39m         [38;5;28mself[39m._chunk_grid,
-[32m   1630[39m         indexer,
-[32m   1631[39m         value,
-[32m   1632[39m         prototype=prototype,
-[32m   1633[39m         fields=fields,
-[32m   1634[39m     )
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/array.py:1684[39m, in [36mAsyncArray._set_selection[39m[34m(self, indexer, value, prototype, fields)[39m
+[32m   1680[39m [38;5;28;01mif[39;00m product(indexer.shape) > [32m0[39m:
+[32m   1681[39m     [38;5;66;03m# Chunks are about to be stored under the repaired metadata, so store it[39;00m
+[32m   1682[39m     [38;5;66;03m# first: every reader of the store then agrees with them.[39;00m
+[32m   1683[39m     [38;5;28;01mawait[39;00m [38;5;28mself[39m._store_repaired_document()
+[32m-> [39m[32m1684[39m [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m _set_selection(
+[32m   1685[39m     [38;5;28mself[39m.store_path,
+[32m   1686[39m     [38;5;28mself[39m.metadata,
+[32m   1687[39m     [38;5;28mself[39m.codec_pipeline,
+[32m   1688[39m     [38;5;28mself[39m.config,
+[32m   1689[39m     [38;5;28mself[39m._chunk_grid,
+[32m   1690[39m     indexer,
+[32m   1691[39m     value,
+[32m   1692[39m     prototype=prototype,
+[32m   1693[39m     fields=fields,
+[32m   1694[39m )
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/array.py:5810[39m, in [36m_set_selection[39m[34m(store_path, metadata, codec_pipeline, config, chunk_grid, indexer, value, prototype, fields)[39m
-[32m   5802[39m [38;5;28;01mif[39;00m regular_grid:
-[32m   5803[39m     regular_chunk_spec = ArraySpec(
-[32m   5804[39m         shape=chunk_grid.chunk_shape,
-[32m   5805[39m         dtype=metadata.dtype,
-[32m   (...)[39m[32m   5808[39m         prototype=prototype,
-[32m   5809[39m     )
-[32m-> [39m[32m5810[39m [38;5;28;01mawait[39;00m codec_pipeline.write(
-[32m   5811[39m     [
-[32m   5812[39m         (
-[32m   5813[39m             store_path / metadata.encode_chunk_key(chunk_coords),
-[32m   5814[39m             regular_chunk_spec
-[32m   5815[39m             [38;5;28;01mif[39;00m regular_grid
-[32m   5816[39m             [38;5;28;01melse[39;00m _get_chunk_spec(metadata, chunk_grid, chunk_coords, _config, prototype),
-[32m   5817[39m             chunk_selection,
-[32m   5818[39m             out_selection,
-[32m   5819[39m             is_complete_chunk,
-[32m   5820[39m         )
-[32m   5821[39m         [38;5;28;01mfor[39;00m chunk_coords, chunk_selection, out_selection, is_complete_chunk [38;5;129;01min[39;00m indexer
-[32m   5822[39m     ],
-[32m   5823[39m     value_buffer,
-[32m   5824[39m     drop_axes=indexer.drop_axes,
-[32m   5825[39m )
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/array.py:5899[39m, in [36m_set_selection[39m[34m(store_path, metadata, codec_pipeline, config, chunk_grid, indexer, value, prototype, fields)[39m
+[32m   5891[39m [38;5;28;01mif[39;00m regular_grid:
+[32m   5892[39m     regular_chunk_spec = ArraySpec(
+[32m   5893[39m         shape=chunk_grid.chunk_shape,
+[32m   5894[39m         dtype=metadata.dtype,
+[32m   (...)[39m[32m   5897[39m         prototype=prototype,
+[32m   5898[39m     )
+[32m-> [39m[32m5899[39m [38;5;28;01mawait[39;00m codec_pipeline.write(
+[32m   5900[39m     [
+[32m   5901[39m         (
+[32m   5902[39m             store_path / metadata.encode_chunk_key(chunk_coords),
+[32m   5903[39m             regular_chunk_spec
+[32m   5904[39m             [38;5;28;01mif[39;00m regular_grid
+[32m   5905[39m             [38;5;28;01melse[39;00m _get_chunk_spec(metadata, chunk_grid, chunk_coords, _config, prototype),
+[32m   5906[39m             chunk_selection,
+[32m   5907[39m             out_selection,
+[32m   5908[39m             is_complete_chunk,
+[32m   5909[39m         )
+[32m   5910[39m         [38;5;28;01mfor[39;00m chunk_coords, chunk_selection, out_selection, is_complete_chunk [38;5;129;01min[39;00m indexer
+[32m   5911[39m     ],
+[32m   5912[39m     value_buffer,
+[32m   5913[39m     drop_axes=indexer.drop_axes,
+[32m   5914[39m )
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/codec_pipeline.py:849[39m, in [36mBatchedCodecPipeline.write[39m[34m(self, batch_info, value, drop_axes)[39m
-[32m    843[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mwrite[39m(
-[32m    844[39m     [38;5;28mself[39m,
-[32m    845[39m     batch_info: Iterable[[38;5;28mtuple[39m[ByteSetter, ArraySpec, SelectorTuple, SelectorTuple, [38;5;28mbool[39m]],
-[32m    846[39m     value: NDBuffer,
-[32m    847[39m     drop_axes: [38;5;28mtuple[39m[[38;5;28mint[39m, ...] = (),
-[32m    848[39m ) -> [38;5;28;01mNone[39;00m:
-[32m--> [39m[32m849[39m     [38;5;28;01mawait[39;00m concurrent_map(
-[32m    850[39m         [
-[32m    851[39m             (single_batch_info, value, drop_axes)
-[32m    852[39m             [38;5;28;01mfor[39;00m single_batch_info [38;5;129;01min[39;00m batched(batch_info, [38;5;28mself[39m.batch_size)
-[32m    853[39m         ],
-[32m    854[39m         [38;5;28mself[39m.write_batch,
-[32m    855[39m         config.get([33m"[39m[33masync.concurrency[39m[33m"[39m),
-[32m    856[39m     )
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/codec_pipeline.py:852[39m, in [36mBatchedCodecPipeline.write[39m[34m(self, batch_info, value, drop_axes)[39m
+[32m    846[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mwrite[39m(
+[32m    847[39m     [38;5;28mself[39m,
+[32m    848[39m     batch_info: Iterable[[38;5;28mtuple[39m[ByteSetter, ArraySpec, SelectorTuple, SelectorTuple, [38;5;28mbool[39m]],
+[32m    849[39m     value: NDBuffer,
+[32m    850[39m     drop_axes: [38;5;28mtuple[39m[[38;5;28mint[39m, ...] = (),
+[32m    851[39m ) -> [38;5;28;01mNone[39;00m:
+[32m--> [39m[32m852[39m     [38;5;28;01mawait[39;00m concurrent_map(
+[32m    853[39m         [
+[32m    854[39m             (single_batch_info, value, drop_axes)
+[32m    855[39m             [38;5;28;01mfor[39;00m single_batch_info [38;5;129;01min[39;00m batched(batch_info, [38;5;28mself[39m.batch_size)
+[32m    856[39m         ],
+[32m    857[39m         [38;5;28mself[39m.write_batch,
+[32m    858[39m         config.get([33m"[39m[33masync.concurrency[39m[33m"[39m),
+[32m    859[39m     )
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/common.py:139[39m, in [36mconcurrent_map[39m[34m(items, func, limit)[39m
-[32m    134[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mconcurrent_map[39m[T: [38;5;28mtuple[39m[Any, ...], V](
-[32m    135[39m     items: Iterable[T],
-[32m    136[39m     func: Callable[..., Awaitable[V]],
-[32m    137[39m     limit: [38;5;28mint[39m | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m,
-[32m    138[39m ) -> [38;5;28mlist[39m[V]:
-[32m--> [39m[32m139[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m asyncio.gather(*concurrent_iter(items, func, limit))
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/common.py:145[39m, in [36mconcurrent_map[39m[34m(items, func, limit)[39m
+[32m    140[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mconcurrent_map[39m[T: [38;5;28mtuple[39m[Any, ...], V](
+[32m    141[39m     items: Iterable[T],
+[32m    142[39m     func: Callable[..., Awaitable[V]],
+[32m    143[39m     limit: [38;5;28mint[39m | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m,
+[32m    144[39m ) -> [38;5;28mlist[39m[V]:
+[32m--> [39m[32m145[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m asyncio.gather(*concurrent_iter(items, func, limit))
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/common.py:129[39m, in [36mconcurrent_iter.<locals>.run[39m[34m(item)[39m
-[32m    127[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mrun[39m(item: T) -> V:
-[32m    128[39m     [38;5;28;01masync[39;00m [38;5;28;01mwith[39;00m sem:
-[32m--> [39m[32m129[39m         [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m func(*item)
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/common.py:135[39m, in [36mconcurrent_iter.<locals>.run[39m[34m(item)[39m
+[32m    133[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mrun[39m(item: T) -> V:
+[32m    134[39m     [38;5;28;01masync[39;00m [38;5;28;01mwith[39;00m sem:
+[32m--> [39m[32m135[39m         [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m func(*item)
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/codec_pipeline.py:804[39m, in [36mBatchedCodecPipeline.write_batch[39m[34m(self, batch_info, value, drop_axes)[39m
-[32m    796[39m         [38;5;28;01mawait[39;00m [38;5;28mself[39m.encode_partial_batch(
-[32m    797[39m             [
-[32m    798[39m                 (byte_setter, value[out_selection], chunk_selection, chunk_spec)
-[32m    799[39m                 [38;5;28;01mfor[39;00m byte_setter, chunk_spec, chunk_selection, out_selection, _ [38;5;129;01min[39;00m batch_info
-[32m    800[39m             ],
-[32m    801[39m         )
-[32m    803[39m     [38;5;28;01mreturn[39;00m
-[32m--> [39m[32m804[39m [38;5;28;01mawait[39;00m _async_write_fallback([38;5;28mself[39m, [38;5;28mlist[39m(batch_info), value, drop_axes)
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/codec_pipeline.py:807[39m, in [36mBatchedCodecPipeline.write_batch[39m[34m(self, batch_info, value, drop_axes)[39m
+[32m    799[39m         [38;5;28;01mawait[39;00m [38;5;28mself[39m.encode_partial_batch(
+[32m    800[39m             [
+[32m    801[39m                 (byte_setter, value[out_selection], chunk_selection, chunk_spec)
+[32m    802[39m                 [38;5;28;01mfor[39;00m byte_setter, chunk_spec, chunk_selection, out_selection, _ [38;5;129;01min[39;00m batch_info
+[32m    803[39m             ],
+[32m    804[39m         )
+[32m    806[39m     [38;5;28;01mreturn[39;00m
+[32m--> [39m[32m807[39m [38;5;28;01mawait[39;00m _async_write_fallback([38;5;28mself[39m, [38;5;28mlist[39m(batch_info), value, drop_axes)
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/codec_pipeline.py:476[39m, in [36m_async_write_fallback[39m[34m(pipeline, batch, value, drop_axes)[39m
-[32m    466[39m     [38;5;28;01mawait[39;00m _encode_and_write_as_completed(
-[32m    467[39m         [
-[32m    468[39m             (byte_setter, chunk_array, chunk_spec)
-[32m   (...)[39m[32m    473[39m         sync_transform,
-[32m    474[39m     )
-[32m    475[39m [38;5;28;01melse[39;00m:
-[32m--> [39m[32m476[39m     chunk_bytes_batch = [38;5;28;01mawait[39;00m pipeline.encode(
-[32m    477[39m         [
-[32m    478[39m             (chunk_array, chunk_spec)
-[32m    479[39m             [38;5;28;01mfor[39;00m chunk_array, (_, chunk_spec, *_) [38;5;129;01min[39;00m [38;5;28mzip[39m(chunk_array_batch, batch, strict=[38;5;28;01mFalse[39;00m)
-[32m    480[39m         ],
-[32m    481[39m     )
-[32m    483[39m     [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_write_key[39m(byte_setter: ByteSetter, chunk_bytes: Buffer | [38;5;28;01mNone[39;00m) -> [38;5;28;01mNone[39;00m:
-[32m    484[39m         [38;5;28;01mif[39;00m chunk_bytes [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/codec_pipeline.py:473[39m, in [36m_async_write_fallback[39m[34m(pipeline, batch, value, drop_axes)[39m
+[32m    463[39m     [38;5;28;01mawait[39;00m _encode_and_write_as_completed(
+[32m    464[39m         [
+[32m    465[39m             (byte_setter, chunk_array, chunk_spec)
+[32m   (...)[39m[32m    470[39m         sync_transform,
+[32m    471[39m     )
+[32m    472[39m [38;5;28;01melse[39;00m:
+[32m--> [39m[32m473[39m     chunk_bytes_batch = [38;5;28;01mawait[39;00m pipeline.encode(
+[32m    474[39m         [
+[32m    475[39m             (chunk_array, chunk_spec)
+[32m    476[39m             [38;5;28;01mfor[39;00m chunk_array, (_, chunk_spec, *_) [38;5;129;01min[39;00m [38;5;28mzip[39m(chunk_array_batch, batch, strict=[38;5;28;01mFalse[39;00m)
+[32m    477[39m         ],
+[32m    478[39m     )
+[32m    480[39m     [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_write_key[39m(byte_setter: ByteSetter, chunk_bytes: Buffer | [38;5;28;01mNone[39;00m) -> [38;5;28;01mNone[39;00m:
+[32m    481[39m         [38;5;28;01mif[39;00m chunk_bytes [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/codec_pipeline.py:821[39m, in [36mBatchedCodecPipeline.encode[39m[34m(self, chunk_arrays_and_specs)[39m
-[32m    819[39m output: [38;5;28mlist[39m[Buffer | [38;5;28;01mNone[39;00m] = []
-[32m    820[39m [38;5;28;01mfor[39;00m single_batch_info [38;5;129;01min[39;00m batched(chunk_arrays_and_specs, [38;5;28mself[39m.batch_size):
-[32m--> [39m[32m821[39m     output.extend([38;5;28;01mawait[39;00m [38;5;28mself[39m.encode_batch(single_batch_info))
-[32m    822[39m [38;5;28;01mreturn[39;00m output
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/codec_pipeline.py:824[39m, in [36mBatchedCodecPipeline.encode[39m[34m(self, chunk_arrays_and_specs)[39m
+[32m    822[39m output: [38;5;28mlist[39m[Buffer | [38;5;28;01mNone[39;00m] = []
+[32m    823[39m [38;5;28;01mfor[39;00m single_batch_info [38;5;129;01min[39;00m batched(chunk_arrays_and_specs, [38;5;28mself[39m.batch_size):
+[32m--> [39m[32m824[39m     output.extend([38;5;28;01mawait[39;00m [38;5;28mself[39m.encode_batch(single_batch_info))
+[32m    825[39m [38;5;28;01mreturn[39;00m output
 
 [36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/codec_pipeline.py:730[39m, in [36mBatchedCodecPipeline.encode_batch[39m[34m(self, chunk_arrays_and_specs)[39m
 [32m    725[39m     chunk_array_batch = [38;5;28;01mawait[39;00m aa_codec.encode(
@@ -243,37 +242,37 @@
 [32m    518[39m         config.get([33m"[39m[33masync.concurrency[39m[33m"[39m),
 [32m    519[39m     )
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/common.py:139[39m, in [36mconcurrent_map[39m[34m(items, func, limit)[39m
-[32m    134[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mconcurrent_map[39m[T: [38;5;28mtuple[39m[Any, ...], V](
-[32m    135[39m     items: Iterable[T],
-[32m    136[39m     func: Callable[..., Awaitable[V]],
-[32m    137[39m     limit: [38;5;28mint[39m | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m,
-[32m    138[39m ) -> [38;5;28mlist[39m[V]:
-[32m--> [39m[32m139[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m asyncio.gather(*concurrent_iter(items, func, limit))
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/common.py:145[39m, in [36mconcurrent_map[39m[34m(items, func, limit)[39m
+[32m    140[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mconcurrent_map[39m[T: [38;5;28mtuple[39m[Any, ...], V](
+[32m    141[39m     items: Iterable[T],
+[32m    142[39m     func: Callable[..., Awaitable[V]],
+[32m    143[39m     limit: [38;5;28mint[39m | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m,
+[32m    144[39m ) -> [38;5;28mlist[39m[V]:
+[32m--> [39m[32m145[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m asyncio.gather(*concurrent_iter(items, func, limit))
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/common.py:129[39m, in [36mconcurrent_iter.<locals>.run[39m[34m(item)[39m
-[32m    127[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mrun[39m(item: T) -> V:
-[32m    128[39m     [38;5;28;01masync[39;00m [38;5;28;01mwith[39;00m sem:
-[32m--> [39m[32m129[39m         [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m func(*item)
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/core/common.py:135[39m, in [36mconcurrent_iter.<locals>.run[39m[34m(item)[39m
+[32m    133[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mrun[39m(item: T) -> V:
+[32m    134[39m     [38;5;28;01masync[39;00m [38;5;28;01mwith[39;00m sem:
+[32m--> [39m[32m135[39m         [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m func(*item)
 
 [36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/abc/codec.py:528[39m, in [36m_noop_for_none.<locals>.wrap[39m[34m(chunk, chunk_spec)[39m
 [32m    526[39m [38;5;28;01mif[39;00m chunk [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
 [32m    527[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mNone[39;00m
 [32m--> [39m[32m528[39m [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m func(chunk, chunk_spec)
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/codecs/bytes.py:165[39m, in [36mBytesCodec._encode_single[39m[34m(self, chunk_array, chunk_spec)[39m
-[32m    160[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_encode_single[39m(
-[32m    161[39m     [38;5;28mself[39m,
-[32m    162[39m     chunk_array: NDBuffer,
-[32m    163[39m     chunk_spec: ArraySpec,
-[32m    164[39m ) -> Buffer | [38;5;28;01mNone[39;00m:
-[32m--> [39m[32m165[39m     [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_encode_sync[39;49m[30;43m([39;49m[30;43mchunk_array[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mchunk_spec[39;49m[30;43m)[39;49m
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/codecs/bytes.py:164[39m, in [36mBytesCodec._encode_single[39m[34m(self, chunk_array, chunk_spec)[39m
+[32m    159[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_encode_single[39m(
+[32m    160[39m     [38;5;28mself[39m,
+[32m    161[39m     chunk_array: NDBuffer,
+[32m    162[39m     chunk_spec: ArraySpec,
+[32m    163[39m ) -> Buffer | [38;5;28;01mNone[39;00m:
+[32m--> [39m[32m164[39m     [38;5;28;01mreturn[39;00m [30;43mself[39;49m[30;43m.[39;49m[30;43m_encode_sync[39;49m[30;43m([39;49m[30;43mchunk_array[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mchunk_spec[39;49m[30;43m)[39;49m
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/codecs/bytes.py:157[39m, in [36mBytesCodec._encode_sync[39m[34m(self, chunk_array, chunk_spec)[39m
-[32m    155[39m nd_array = chunk_array.as_ndarray_like()
-[32m    156[39m [38;5;66;03m# Flatten the nd-array (only copy if needed) and reinterpret as bytes[39;00m
-[32m--> [39m[32m157[39m nd_array = [30;43mnd_array[39;49m[30;43m.[39;49m[30;43mravel[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43mview[39;49m[30;43m([39;49m[30;43mdtype[39;49m[30;43m=[39;49m[30;43m"[39;49m[30;43mB[39;49m[30;43m"[39;49m[30;43m)[39;49m
-[32m    158[39m [38;5;28;01mreturn[39;00m chunk_spec.prototype.buffer.from_array_like(nd_array)
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/zarr/codecs/bytes.py:156[39m, in [36mBytesCodec._encode_sync[39m[34m(self, chunk_array, chunk_spec)[39m
+[32m    154[39m nd_array = chunk_array.as_ndarray_like()
+[32m    155[39m [38;5;66;03m# Flatten the nd-array (only copy if needed) and reinterpret as bytes[39;00m
+[32m--> [39m[32m156[39m nd_array = [30;43mnd_array[39;49m[30;43m.[39;49m[30;43mravel[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43mview[39;49m[30;43m([39;49m[30;43mdtype[39;49m[30;43m=[39;49m[30;43m"[39;49m[30;43mB[39;49m[30;43m"[39;49m[30;43m)[39;49m
+[32m    157[39m [38;5;28;01mreturn[39;00m chunk_spec.prototype.buffer.from_array_like(nd_array)
 
 [36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/numpy/ma/core.py:3270[39m, in [36mMaskedArray.view[39m[34m(self, dtype, type, fill_value)[39m
 [32m   3267[39m     [38;5;28mtype[39m = dtype
