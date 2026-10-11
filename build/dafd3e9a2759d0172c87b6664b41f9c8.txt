@@ -274,18 +274,18 @@
 [32m--> [39m[32m156[39m nd_array = [30;43mnd_array[39;49m[30;43m.[39;49m[30;43mravel[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43mview[39;49m[30;43m([39;49m[30;43mdtype[39;49m[30;43m=[39;49m[30;43m"[39;49m[30;43mB[39;49m[30;43m"[39;49m[30;43m)[39;49m
 [32m    157[39m [38;5;28;01mreturn[39;00m chunk_spec.prototype.buffer.from_array_like(nd_array)
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/numpy/ma/core.py:3270[39m, in [36mMaskedArray.view[39m[34m(self, dtype, type, fill_value)[39m
-[32m   3267[39m     [38;5;28mtype[39m = dtype
-[32m   3268[39m     dtype = [38;5;28;01mNone[39;00m
-[32m-> [39m[32m3270[39m output = [30;43msuper[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43mview[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43m[[39;49m[30;43ma[39;49m[30;43m [39;49m[30;43;01mfor[39;49;00m[30;43m [39;49m[30;43ma[39;49m[30;43m [39;49m[30;43;01min[39;49;00m[30;43m [39;49m[30;43m([39;49m[30;43mdtype[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mtype[39;49m[30;43m)[39;49m[30;43m [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43ma[39;49m[30;43m [39;49m[30;43;01mis[39;49;00m[30;43m [39;49m[30;43;01mnot[39;49;00m[30;43m [39;49m[30;43;01mNone[39;49;00m[30;43m][39;49m[30;43m)[39;49m
-[32m   3272[39m [38;5;66;03m# Make sure to reset the _fill_value if needed[39;00m
-[32m   3273[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(output, [33m'[39m[33m_fill_value[39m[33m'[39m, [38;5;28;01mNone[39;00m) [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/numpy/ma/core.py:3283[39m, in [36mMaskedArray.view[39m[34m(self, dtype, type, fill_value)[39m
+[32m   3280[39m     [38;5;28mtype[39m = dtype
+[32m   3281[39m     dtype = [38;5;28;01mNone[39;00m
+[32m-> [39m[32m3283[39m output = [30;43msuper[39;49m[30;43m([39;49m[30;43m)[39;49m[30;43m.[39;49m[30;43mview[39;49m[30;43m([39;49m[30;43m*[39;49m[30;43m[[39;49m[30;43ma[39;49m[30;43m [39;49m[30;43;01mfor[39;49;00m[30;43m [39;49m[30;43ma[39;49m[30;43m [39;49m[30;43;01min[39;49;00m[30;43m [39;49m[30;43m([39;49m[30;43mdtype[39;49m[30;43m,[39;49m[30;43m [39;49m[30;43mtype[39;49m[30;43m)[39;49m[30;43m [39;49m[30;43;01mif[39;49;00m[30;43m [39;49m[30;43ma[39;49m[30;43m [39;49m[30;43;01mis[39;49;00m[30;43m [39;49m[30;43;01mnot[39;49;00m[30;43m [39;49m[30;43;01mNone[39;49;00m[30;43m][39;49m[30;43m)[39;49m
+[32m   3285[39m [38;5;66;03m# Make sure to reset the _fill_value if needed[39;00m
+[32m   3286[39m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(output, [33m'[39m[33m_fill_value[39m[33m'[39m, [38;5;28;01mNone[39;00m) [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
 
-[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/numpy/ma/core.py:3486[39m, in [36mMaskedArray._set_dtype[39m[34m(self, dtype)[39m
-[32m   3484[39m [38;5;28mself[39m._mask = [38;5;28mself[39m._mask.view(make_mask_descr(dtype), ndarray)
-[32m   3485[39m [38;5;28;01mtry[39;00m:
-[32m-> [39m[32m3486[39m     [38;5;28mself[39m._mask = [30;43mself[39;49m[30;43m.[39;49m[30;43m_mask[39;49m[30;43m.[39;49m[30;43mreshape[39;49m[30;43m([39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mshape[39;49m[30;43m)[39;49m
-[32m   3487[39m [38;5;28;01mexcept[39;00m ([38;5;167;01mAttributeError[39;00m, [38;5;167;01mTypeError[39;00m):
-[32m   3488[39m     [38;5;28;01mpass[39;00m
+[36mFile [39m[32m~/micromamba/envs/cdh-python/lib/python3.14/site-packages/numpy/ma/core.py:3499[39m, in [36mMaskedArray._set_dtype[39m[34m(self, dtype)[39m
+[32m   3497[39m [38;5;28mself[39m._mask = [38;5;28mself[39m._mask.view(make_mask_descr(dtype), ndarray)
+[32m   3498[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m3499[39m     [38;5;28mself[39m._mask = [30;43mself[39;49m[30;43m.[39;49m[30;43m_mask[39;49m[30;43m.[39;49m[30;43mreshape[39;49m[30;43m([39;49m[30;43mself[39;49m[30;43m.[39;49m[30;43mshape[39;49m[30;43m)[39;49m
+[32m   3500[39m [38;5;28;01mexcept[39;00m ([38;5;167;01mAttributeError[39;00m, [38;5;167;01mTypeError[39;00m):
+[32m   3501[39m     [38;5;28;01mpass[39;00m
 
 [31mValueError[39m: cannot reshape array of size 89460 into shape (357840,)
