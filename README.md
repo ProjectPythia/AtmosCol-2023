@@ -31,7 +31,7 @@ Este libro refleja los principios de la ciencia abierta, promoviendo:
 - Usar herramientas de código abierto como `xarray`, `pyart`, `pandas`, `cartopy`, `hvplot` y más
 - Acceder a datos reales de estaciones IDEAM, radares meteorológicos, GFS, OPENDAP y modelos CMIP
 - Aplicar conceptos de ciencia abierta y reproducibilidad
-- Analizar fenómenos como ENSO y visualizar escenarios de cambio climático
+- Analizar fenómenos climáticos como El ENOS (El Niño-Oscilación del Sur, o ENSO en sus siglas en inglés) y visualizar escenarios de cambio climático
 
 ---
 
@@ -46,9 +46,9 @@ El contenido está organizado en capítulos temáticos, cada uno representado po
    Casos de estudio con datos hidrometeorológicos de Colombia: estaciones del IDEAM, radares meteorológicos, y uso de modelos globales (GFS).
 
 3. **Fenómenos climáticos**  
-   Cálculo de anomalías relacionadas con el fenómeno ENSO en el Pacífico Tropical.
+   Cálculo de anomalías relacionadas con el fenómeno ENOS en el Pacífico Tropical.
 
-4. **Cambio climático**  
+4. **Cambio climático**
    Visualización de datos de modelos climáticos globales (CMIP) y reproducción de gráficas del IPCC sobre aumento de temperatura.
 
 ---
