@@ -1,61 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="http://localhost:3000/sitemap_style.xsl" ?>
+<?xml-stylesheet type="text/xsl" href="http://pre.render/sitemap_style.xsl" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000</loc>
+    <loc>http://pre.render</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/how-to-cite</loc>
+    <loc>http://pre.render/how-to-cite</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduccion-jupyterlab</loc>
+    <loc>http://pre.render/introduccion-jupyterlab</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/fundamentos-python</loc>
+    <loc>http://pre.render/fundamentos-python</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduccion-numpy</loc>
+    <loc>http://pre.render/introduccion-numpy</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduccion-pandas</loc>
+    <loc>http://pre.render/introduccion-pandas</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduccion-xarray</loc>
+    <loc>http://pre.render/introduccion-xarray</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduccion-radar</loc>
+    <loc>http://pre.render/introduccion-radar</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/exploracion-netcdf-grib</loc>
+    <loc>http://pre.render/exploracion-netcdf-grib</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/introduccion-arco</loc>
+    <loc>http://pre.render/introduccion-arco</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/formato-zarr</loc>
+    <loc>http://pre.render/formato-zarr</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/estaciones</loc>
+    <loc>http://pre.render/estaciones</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/radares</loc>
+    <loc>http://pre.render/radares</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/gfs</loc>
+    <loc>http://pre.render/gfs</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/enso</loc>
+    <loc>http://pre.render/enso</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/global-mean-sst</loc>
+    <loc>http://pre.render/global-mean-sst</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/era5</loc>
+    <loc>http://pre.render/era5</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/qvps</loc>
+    <loc>http://pre.render/qvps</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/qpe</loc>
+    <loc>http://pre.render/qpe</loc>
   </url>
 </urlset>
